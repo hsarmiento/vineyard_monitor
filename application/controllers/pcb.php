@@ -48,8 +48,8 @@ class Pcb extends CI_Controller
 		$iTempValue = $this->uri->segment(15,0);
 		$sWindGaugeIden= $this->uri->segment(16,0);
 		$iWindGaugeValue = $this->uri->segment(17,0);
-		$iLatitude = $this->uri->segment(18,0);
-		$iLongitude = $this->uri->segment(19,0);
+		$fLatitude = $this->uri->segment(18,0);
+		$fLongitude = $this->uri->segment(19,0);
 		$iBattery = $this->uri->segment(20,0);
 
 		$this->load->model('pcb_model');
@@ -65,6 +65,39 @@ class Pcb extends CI_Controller
 
 		// echo $sPcbIdent;
 		$iPcbId = $this->pcb_model->get_pcb_id_with_identifier($sPcbIdent);
+		$this->position_model->initialize($iPcbId,$fLatitude, $fLongitude);
+		$this->position_model->save_position();
+		$iSensorIdAmbient = $this->sensor_model->get_sensor_id_with_identifier_and_pcb($sAmbientMoisIden, $iPcbId);
+		$iSensorIdLeaves = $this->sensor_model->get_sensor_id_with_identifier_and_pcb($sLeavesMoisIden, $iPcbId);
+		$iSensorIdRain = $this->sensor_model->get_sensor_id_with_identifier_and_pcb($sRainGaugeIden, $iPcbId);
+		$iSensorIdSubSoil05 = $this->sensor_model->get_sensor_id_with_identifier_and_pcb($sSubsoil05Iden, $iPcbId);
+		$iSensorIdSubsoil001 = $this->sensor_model->get_sensor_id_with_identifier_and_pcb($sSubsoil001Iden, $iPcbId);
+		$iSensorIdTemp = $this->sensor_model->get_sensor_id_with_identifier_and_pcb($sTempIden, $iPcbId);
+		$iSensorIdWind = $this->sensor_model->get_sensor_id_with_identifier_and_pcb($sWindGaugeIden, $iPcbId);
+
+		$this->ambient_moisture_model->initialize($iSensorIdAmbient,$iAmbientMoisValue);
+		$this->ambient_moisture_model->save_ambient_value();
+
+		$this->leaves_moisture_model->initialize($iSensorIdLeaves,$iLeavesMoisValue);
+		$this->leaves_moisture_model->save_leaves_value();
+
+		$this->rain_gauge_model->initialize($iSensorIdRain,$iRainGaugeValue);
+		$this->rain_gauge_model->save_rain_value();
+
+		$this->subsoil_moisture_001_model->initialize($iSensorIdSubsoil001,$iSubsoil001Value);
+		$this->subsoil_moisture_001_model->save_subsoil_001_value();
+
+		$this->subsoil_moisture_05_model->initialize($iSensorIdSubSoil05,$iSubsoil05Value);
+		$this->subsoil_moisture_05_model->save_subsoil_05_value();
+
+		$this->temperature_model->initialize($iSensorIdTemp,$iTempValue);
+		$this->temperature_model->save_temperature_value();
+
+		$this->wind_gauge_model->initialize($iSensorIdWind,$iWindGaugeValue);
+		$this->wind_gauge_model->save_wind_value();
+
+
+		// echo $iSensorIdWind;
 		// echo $iPcbId;
 
 
