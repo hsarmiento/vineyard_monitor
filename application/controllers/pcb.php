@@ -22,6 +22,39 @@ class Pcb extends CI_Controller
 		$this->layout->view('index',compact('aPos','aTemp','aAlarmsEvents'));
 	}
 
+	public function get_data_gprs()
+	{
+		// i_AM = sensor identifier ambient moisture
+		// i_LM = sensor identifier leaves moisture
+		// i_RG = sensor identifier rain gauge
+		// i_SM001 = sensor identifier subsoil moisture 001
+		// i_SM05 = sensor identifier subsoil moisture 05
+		// i_TM = sensor identifier temperature
+		// i_WG = sensor identifier wind gauge
+
+		/* /pcb/get_data_gprs/i_PCB/i_AM/value_AM/i_LM/value_LM/i_RG/value_RG/i_SM001/value_SM001/i_SM05/value_SM05/i_TM/value_TM/i_WG/value_WG/lat/long/battery   */
+		$sPcbIdent = $this->uri->segment(3,0);
+		$sAmbientMoisIden= $this->uri->segment(4,0);
+		$iAmbientMoisValue = $this->uri->segment(5,0);
+		$sLeavesMoisIden= $this->uri->segment(6,0);
+		$iLeavesMoisValue = $this->uri->segment(7,0);
+		$sRainGaugeIden= $this->uri->segment(8,0);
+		$iRainGaugeValue = $this->uri->segment(9,0);
+		$sSubsoil001Iden= $this->uri->segment(10,0);
+		$iSubsoil001Value = $this->uri->segment(11,0);
+
+		$sSubsoil05Iden= $this->uri->segment(12,0);
+		$iSubsoil05Value = $this->uri->segment(13,0);
+		$sTempIden= $this->uri->segment(14,0);
+		$iTempValue = $this->uri->segment(15,0);
+		$sWindGaugeIden= $this->uri->segment(16,0);
+		$iWindGaugeValue = $this->uri->segment(17,0);
+		$iLatitude = $this->uri->segment(18,0);
+		$iLongitude = $this->uri->segment(19,0);
+		$iBattery = $this->uri->segment(20,0);
+
+	}
+
 	public function trending($pcb_id)
 	{
 		$this->load->model('sensor_model');
