@@ -16,7 +16,7 @@ class Pcb_model extends CI_Model {
 
     public function get_all()
     {
-        $query = $this->db->get('pcb');
+        $query = $this->db->get('pcbs');
         return $query->result_array();
     }
 
@@ -24,7 +24,7 @@ class Pcb_model extends CI_Model {
     {
         $query = $this->db->query('SELECT pcb.id as pcb_id, sensors.id as sensor_id, sensors.identifier 
                 as sensor_identifier, temperature.value as t_value, temperature.created_at as created_at 
-                FROM (pcb) LEFT JOIN sensors ON pcb.id = sensors.pcb_id 
+                FROM (pcbs) LEFT JOIN sensors ON pcb.id = sensors.pcb_id 
                 JOIN temperature ON sensors.id = temperature.sensor_id WHERE pcb.id = '.$pcb_id.' 
                 and temperature.created_at >= NOW() - INTERVAL 3 DAY 
                 ORDER BY sensors.id asc, temperature.created_at asc'
@@ -36,7 +36,7 @@ class Pcb_model extends CI_Model {
     public function get_pcb_id_with_identifier($identifier)
     {
         $this->db->select('id')
-        ->from('pcb')
+        ->from('pcbs')
         ->where('identifier', $identifier);
         $aQuery = $this->db->get()->row_array();
         return $aQuery['id'];
@@ -57,7 +57,7 @@ class Pcb_model extends CI_Model {
         $query = $this->db->query('select t1.id as pcb_id, t1.identifier as pcb_identifer, 
             t2.id as sensor_id, t2.identifier as sensor_identifier,
             t3.status as status, t3.created_at as created_at,
-            t3.stopped_at as stopped_at, t4.value as temperature from pcb as t1 join 
+            t3.stopped_at as stopped_at, t4.value as temperature from pcbs as t1 join 
             sensors as t2 on t1.id = t2.pcb_id 
             join heaters as t3 on t2.id = t3.sensor_id 
             left join temperature as t4 on t2.id = t4.sensor_id where t1.id = '.$pcb_id.'
@@ -68,7 +68,7 @@ class Pcb_model extends CI_Model {
     public function get_pcb_id_with_trailer($trailer_id)
     {
         $this->db->select('id')
-        ->from('pcb')
+        ->from('pcbs')
         ->where('trailer_id', $trailer_id);
         $aQuery = $this->db->get()->row_array();
         return $aQuery['id'];

@@ -42,7 +42,6 @@ class Pcb extends CI_Controller
 		$iRainGaugeValue = $this->uri->segment(9,0);
 		$sSubsoil001Iden= $this->uri->segment(10,0);
 		$iSubsoil001Value = $this->uri->segment(11,0);
-
 		$sSubsoil05Iden= $this->uri->segment(12,0);
 		$iSubsoil05Value = $this->uri->segment(13,0);
 		$sTempIden= $this->uri->segment(14,0);
@@ -52,6 +51,22 @@ class Pcb extends CI_Controller
 		$iLatitude = $this->uri->segment(18,0);
 		$iLongitude = $this->uri->segment(19,0);
 		$iBattery = $this->uri->segment(20,0);
+
+		$this->load->model('pcb_model');
+		$this->load->model('ambient_moisture_model');
+		$this->load->model('leaves_moisture_model');
+		$this->load->model('position_model');
+		$this->load->model('rain_gauge_model');
+		$this->load->model('sensor_model');
+		$this->load->model('subsoil_moisture_001_model');
+		$this->load->model('subsoil_moisture_05_model');
+		$this->load->model('temperature_model');
+		$this->load->model('wind_gauge_model');
+
+		// echo $sPcbIdent;
+		$iPcbId = $this->pcb_model->get_pcb_id_with_identifier($sPcbIdent);
+		// echo $iPcbId;
+
 
 	}
 
