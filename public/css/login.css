@@ -1,0 +1,116 @@
+
+
+
+
+body {
+	margin: 0px;
+	
+	background-color: #9F9F9C;
+}
+
+
+
+#top {
+	background-image: url(../img/top.png);
+	background-repeat: repeat;
+	background-position: center center;
+	position: absolute;
+	z-index: 10;
+	top: 0px;
+	height: 335px;
+	width: 100%;
+}
+
+#foot {
+	background-image: url(../img/footer.png);
+	background-repeat: repeat;
+	background-position: center top;
+	position: absolute;
+	z-index: 11;
+	bottom: 0px;
+	height: 335px;
+	width: 100%;
+}
+
+
+
+#central {
+	background-image: url(../img/bg_central.png);
+	background-repeat: repeat;
+	background-position: center center;
+	height: 516px;
+	width: 100%;
+	position: absolute;
+	z-index: 20;
+	top: 60px;
+}
+
+
+
+#login {
+	height:400px;
+	width: 284px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 60px;
+	background-image: url(../img/bg_lines.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+
+
+
+
+#logo {
+	height:143px;
+	width: 100%;
+	
+	
+}
+
+
+
+#in_put {
+	height:122px;
+	width: 100%;
+	background-image: url(../img/bg_input.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	
+}
+
+
+#input_name {
+	height:24px;
+	width: 115px;
+	margin-top: 25px;
+	margin-left: 115px;
+}
+
+#input_pass {
+	height:24px;
+	width: 115px;
+	margin-top: 10px;
+	margin-left: 115px;
+}
+
+
+
+#green {
+		height:122px;
+	width: 100%;
+
+	
+}
+
+
+
+#button {
+	height:43px;
+	width: 97px;
+	margin-top: 20px;
+	margin-right: auto;
+	margin-left: auto;
+	
+}

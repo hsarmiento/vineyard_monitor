@@ -1,0 +1,857 @@
+body {
+	margin: 0px;
+	
+	background-color: #9F9F9C;
+}
+
+
+
+#top {
+	background-image: url(../img/top.png);
+	background-repeat: repeat;
+	background-position: center center;
+	position: absolute;
+	z-index: 10;
+	top: 0px;
+	height: 335px;
+	width: 100%;
+}
+
+#foot {
+	background-image: url(../img/footer.png);
+	background-repeat: repeat;
+	background-position: center top;
+	position: absolute;
+	z-index: 11;
+	bottom: 0px;
+	height: 335px;
+	width: 100%;
+	display: none;	
+}
+
+
+
+#central {
+	background-image: url(../img/bg_central.png);
+	background-repeat: repeat;
+	background-position: center center;
+	height: 510px;
+	width: 100%;
+	position: absolute;
+	z-index: 20;
+	top: 69px;
+	left: 2px;
+}
+
+
+#central_full {
+	background-image: url(../img/bg_central2.png);
+	background-repeat: repeat;
+	background-position: center center;
+	height: 510px;
+	width: 100%;
+	position: absolute;
+	z-index: 100000;
+	top: 70px;
+	left: 0px;
+	color: #303030;
+	display: none;	
+}
+
+
+#contenedor_protector {
+
+	height: 100%;
+	width: 100%;
+	
+
+}
+
+#central_modulos {
+	background-image: url(../img/bgmodulos.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	height: 395px;
+	width: 797px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 50px;
+}
+
+#lineauno {
+
+	height: 125px;
+	width: 298px;
+    margin-top: 8px;
+}
+
+
+.titulos_mod_chicos {
+	height: 15px;
+	width: 90%;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #FFF;
+	font-weight: normal;
+	padding-top: 10px;
+	padding-left: 10px;
+	}
+	
+	.titulos_mod_chicos_pre {
+	height: 15px;
+	width: 90%;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #FFF;
+	font-weight: normal;
+	padding-top: 4px;
+	padding-left: 10px;
+	}
+		.titulos_mod_chicos_eventos {
+	height: 15px;
+	width: 90%;
+	font-family: 'Gudea', sans-serif;
+	font-size: 13px;
+	color: #FFF;
+	font-weight: 900;
+	padding-top: 4px;
+	padding-left: 10px;
+	}
+	
+	
+.info_mod_chicos {
+	height: 40px;
+	width: 100px;
+	font-family: 'Gudea', sans-serif;
+	font-size: 30px;
+	color: #FFF;
+	text-align: center;
+	vertical-align: middle;
+	margin-top: 30px;
+	margin-left: 5px;
+	}	
+	
+	
+	.info_mod_chicos_pre {
+	height: 110px;
+	width: 230px;
+	font-family: 'Gudea', sans-serif;
+	font-size: 30px;
+	color: #FFF;
+	
+
+	margin-top: 12px;
+	margin-left: 5px;
+	}	
+	
+	
+	.info_mod_chicos_viento {
+	height: 40px;
+	width: 100px;
+	font-family: 'Gudea', sans-serif;
+	font-size: 20px;
+	color: #6CF;
+	text-align: center;
+	vertical-align: middle;
+	margin-top: 30px;
+	margin-left: 5px;
+	}
+	
+	
+		.info_mod_chicos_prec {
+	height: 40px;
+	width: 100px;
+	font-family: 'Gudea', sans-serif;
+	font-size: 20px;
+	color: #FFF;
+	text-align: center;
+	vertical-align: middle;
+	margin-top: 30px;
+	margin-left: 5px;
+	}
+	
+		.info_mod_chicos_eventos {
+	height: 167px;
+	width: 96%;
+	font-family: 'Gudea', sans-serif;
+	font-size: 30px;
+	color: #FFF;
+	margin-top: 12px;
+	margin-left: 5px;
+	}	
+	
+	
+	
+.link_mod_chicos {
+	height: 15px;
+	width: 100%;
+	margin-top: 20px;
+	}	
+	
+	
+	.link_mod_medio {
+	height: 15px;
+	width: 100%;
+	margin-top: 0px;
+	}	
+	
+	
+	
+	.link_graficogps_temp {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #FFF;
+	}	
+	
+	
+		.link_graficogps_temp a {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #FFF;
+	text-decoration: none;
+	}	
+	
+		.link_graficogps_temp a:hover {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #EF9E00;
+	}	
+	
+	
+	
+	
+	
+
+
+.modulos_chicos_a {
+	float: left;	
+	height: 125px;
+	width: 143px;
+	margin-left: 10px;
+
+}
+
+.modulos_chicos_b {
+	float: left;
+	height: 125px;
+	width: 143px;
+	margin-left: 2px;
+
+}
+
+#lineados {
+		
+	height: 125px;
+	width: 298px;
+    margin-top: 3px;
+}
+
+
+#lineatres {
+		
+	height: 125px;
+	width: 298px;
+    margin-top: 3px;
+}
+
+#bloque_right{
+	height: 390px;
+	width: 495px;
+	margin-top: 3px;
+	float: right;
+}
+
+
+#bloque_right_l1{
+	height: 160px;
+	width: 495px;
+	margin-top: 3px;
+	
+}
+
+
+#bloque_right_l2{
+	height: 220px;
+	width: 495px;
+	margin-top: 3px;
+	
+}
+
+#humedad_sa{
+	height: 160px;
+	width: 240px;
+	float: left;
+	
+}
+
+#humedad_sb{
+	height: 160px;
+	width: 240px;
+	float: left;
+	
+}
+
+
+
+
+
+
+
+
+
+.central_bt_cerrar {
+	font-size: 1px;
+
+	height: 212px;
+	width: 100px;
+	display: block;
+	float: left;
+	z-index: 9000;
+	top: 70px;
+	position: absolute;
+	color: #303030;
+}
+
+.central_bt_cerrar a {
+		color: #303030;
+	font-size: 1px;
+	height: 212px;
+	width: 100px;
+	display: block;
+	float: left;
+	z-index: 200;
+	top: 70px;
+	position: absolute;
+	background-image: url(../img/flechas.png);
+	background-position: -70px;
+	}
+	
+.central_bt_cerrar a:hover {
+		color: #303030;
+	font-size: 1px;
+	font-weight: bold;
+	font-family: 'Gudea', sans-serif;
+	height: 212px;
+	width: 100px;
+	display: block;
+	float: left;
+	z-index: 200;
+	top: 70px;
+	position: absolute;
+	background-image: url(../img/flechas.png);
+	background-position: 5px
+	}
+	
+	
+
+
+
+#cont_bg {
+	height: 360px;
+	width: 800px;
+	margin-right: auto;
+	margin-left: auto;
+
+	padding-top: 40px;
+	margin-top: 50px;
+}
+
+
+
+#box_buttons {
+	height:310px;
+	width: 310px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 10px;	
+}
+
+
+
+#menu_barra {
+	height:55px;
+	width: 900px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 35px;
+	background-image: url(../img/bg_top_menu.png);
+	background-repeat: no-repeat;
+	background-position: center top;
+	padding-top: 45px;
+}
+
+
+#box_botones {
+	height:30px;
+	width: 380px;
+	margin-right: auto;
+	margin-left: auto;
+	
+}
+
+ #box_botones li  {
+	float: left;
+	list-style:none;	
+	
+}
+
+
+
+#box_botones li a {
+	height:15px;
+	width: 60px;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 10px;
+	color: #FFF;
+	text-decoration: none;
+	text-align: center;
+	display: block;
+	margin-left: 10px;
+}
+
+
+#box_botones li a:hover {
+	height:15px;
+	width: 60px;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 10px;
+	color: #FFF;
+	text-decoration: none;
+	text-align: center;
+	display: block;
+	background-color: #2B2B2B;
+}
+
+
+
+
+
+
+.buttons {
+    height:94px;
+	width: 94px;
+	background-color: #2c2c2c;
+	float: left;
+	margin-top: 5px;
+	margin-left: 5px;
+	
+}
+
+
+
+.buttons a {
+	height:94px;
+	width: 94px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	color: #2C2C2C;
+	text-decoration: none;
+	display: block;
+	background-image: url(../img/sprite_1.png);
+	background-position: 0px 3px;
+	
+	}
+
+
+.buttons a:hover {
+	height:94px;
+	width: 94px;
+	
+	display: block;
+	background-image: url(../img/sprite_1.png);
+	
+	background-position: -125px 1px;
+}
+
+
+
+
+
+.buttons_temperatura {
+    height:94px;
+	width: 94px;
+	background-color: #2c2c2c;
+	float: left;
+	margin-top: 5px;
+	margin-left: 5px;
+}
+
+
+
+.buttons_temperatura a {
+	height:94px;
+	width: 94px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	color: #2C2C2C;
+	text-decoration: none;
+	display: block;
+	background-image: url(../img/sprite_1.png);
+	background-position: 2px -115px;
+	
+	}
+
+
+.buttons_temperatura a:hover {
+	height:94px;
+	width: 94px;
+	
+	display: block;
+		background-image: url(../img/sprite_1.png);
+	
+	background-position: -123px -115px;
+}
+
+
+
+.buttons_full {
+    height:94px;
+	width: 94px;
+	background-color: #2c2c2c;
+	float: left;
+	margin-top: 5px;
+	margin-left: 5px;
+}
+
+
+
+.buttons_full a {
+	height:94px;
+	width: 94px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	color: #2C2C2C;
+	text-decoration: none;
+	display: block;
+	background-image: url(../img/sprite_1.png);
+	background-position: 3px -238px;
+
+	
+	}
+
+.buttons_full a:hover {
+	height:94px;
+	width: 94px;
+	
+	display: block;
+	background-image: url(../img/sprite_1.png);
+				background-position: -194px -239px;
+
+}
+
+
+
+.buttons_lluvia {
+    height:94px;
+	width: 94px;
+	background-color: #2c2c2c;
+	float: left;
+	margin-top: 5px;
+	margin-left: 5px;
+}
+
+
+
+.buttons_lluvia a {
+	height:94px;
+	width: 94px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	color: #2C2C2C;
+	text-decoration: none;
+	display: block;
+	background-image: url(../img/sprite_1.png);
+	background-position: -290px 0px;
+
+	
+	}
+
+.buttons_lluvia a:hover {
+	height:94px;
+	width: 94px;
+	
+	display: block;
+	background-image: url(../img/sprite_1.png);
+	background-position: -286px -112px;
+}
+
+
+
+
+.buttons_viento {
+    height:94px;
+	width: 94px;
+	background-color: #2c2c2c;
+	float: left;
+	margin-top: 5px;
+	margin-left: 5px;
+}
+
+
+
+.buttons_viento a {
+	height:94px;
+	width: 94px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	color: #2C2C2C;
+	text-decoration: none;
+	display: block;
+    background-image: url(../img/sprite_1.png);
+    background-position: -5px -360px;
+
+	
+	}
+
+.buttons_viento a:hover {
+	height:94px;
+	width: 94px;
+	
+	display: block;
+		background-image: url(../img/sprite_1.png);
+	background-position: -132px -363px;
+		
+}
+			
+
+
+.buttons_2 {
+	height: 94px;
+	width: 94px;
+	float: left;
+	margin-top: 5px;
+	margin-left: 5px;
+
+}
+
+
+
+#logo{
+	height: 138px;
+	width: 163px;
+	position: absolute;
+	z-index: 99999999;
+	left: 20%;
+	top: 0px;
+
+}
+
+
+
+
+#info_box_viento {
+	height: 119px;
+	width: 300px;
+	font-family: 'Gudea', sans-serif;
+	font-size: 30px;
+		display: none;
+	color: #FFF;
+	font-weight: 100;
+	position: absolute;
+	z-index: 5000;
+	position: absolute;
+	left: 0;
+	right: 450px;
+	margin-right: auto;
+	margin-left: auto;
+	top: 400px;
+	background-image: url(../img/bg_viento.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+#title_viento {
+	height: 40px;
+	width: 100%;
+	font-family: 'Gudea', sans-serif;
+	font-size: 12px;
+	color: #FFF;	
+}
+
+
+
+
+#info_box_temperatura {
+	height: 120px;
+	width: 286px;
+	display: none;
+	position: absolute;
+	z-index: 5001;
+	position: absolute;
+	left: 0;
+	right: 580px;
+	margin-right: auto;
+	margin-left: auto;
+	top: 270px;
+	background-image: url(../img/bg_temp.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	font-family: 'Gudea', sans-serif;
+	font-size: 30px;
+	color: #FFF;
+	font-weight: 100;
+}
+
+
+
+#title_temperatura {
+	height: 40px;
+	width: 100%;
+	font-family: 'Gudea', sans-serif;
+	font-size: 12px;
+	color: #FFF;	
+}
+
+#info_box_humedad {
+	height: 124px;
+	width: 400px;
+	position: absolute;
+	z-index: 5002;
+	position: absolute;
+	display: none;	
+	left: 0;
+	right: -400px;
+	margin-right: auto;
+	margin-left: auto;
+	top: 150px;
+	background-image: url(../img/bg_humd.png);
+	background-position: center center;
+	background-repeat: no-repeat;
+	font-family: 'Gudea', sans-serif;
+	font-size: 30px;
+	color: #FFF;
+	font-weight: 100;
+}
+
+
+#title_humedad {
+	height: 40px;
+	width: 100%;
+	font-family: 'Gudea', sans-serif;
+	font-size: 12px;
+	color: #FFF;	
+}
+
+.bold_humedad {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #6CF;
+	font-weight: 900;
+
+}
+
+
+
+
+.link_a a {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #FFF;
+	font-weight: 900;
+	text-decoration: none;
+}
+
+.link_a a:hover {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #F29D09;
+	font-weight: 900;
+}
+
+
+#a_humedad {
+	height: 65px;
+	width: 266px;
+	font-family: 'Gudea', sans-serif;
+	font-size: 12px;
+	color: #FFF;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 5px;
+
+}
+
+#b_humedad {
+	height: 65px;
+	width: 266px;
+	font-family: 'Gudea', sans-serif;
+	font-size: 12px;
+	color: #FFF;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 5px;
+	display: none;    
+}
+
+.link_b a {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #FFF;
+	font-weight: 900;
+	text-decoration: none;
+}
+
+.link_b a:hover {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #F29D09;
+	font-weight: 900;
+}
+
+
+
+
+
+
+
+
+#info_box_lluvia {
+	height: 100px;
+	width: 286px;
+	position: absolute;
+	z-index: 5001;
+	position: absolute;
+	display: none;
+	left: 0px;
+	right: -575px;
+	margin-right: auto;
+	margin-left: auto;
+	top: 269px;
+	background-image: url(../img/bg_lluvia.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	font-family: 'Gudea', sans-serif;
+	font-size: 20px;
+	color: #6CF;
+	font-weight: 100;
+}
+
+#title_lluvia {
+	height: 40px;
+	width: 100%;
+	font-family: 'Gudea', sans-serif;
+	font-size: 12px;
+	color: #FFF;	
+}
+
+
+.tittle_lluvia {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #FFF;
+	font-weight: normal;
+}
+
+.tittle_lluvia_2 {
+    font-family: 'Gudea', sans-serif;
+	font-size: 12px;
+	color: #FFF;	
+}
+
+.tittle_lluvia_3 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	color: #FFF;
+	text-align: right;
+	font-weight: bold;
+}

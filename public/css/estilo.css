@@ -1,0 +1,18 @@
+
+#news-container
+{
+	width: 95%; 
+	margin: auto;
+	margin-top: 10px;
+	
+}
+
+#news-container ul li div
+{
+	
+
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #FFF;
+}
