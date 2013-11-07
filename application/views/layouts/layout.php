@@ -22,6 +22,14 @@
 
 	</head>
 
+	<style>
+      html, body, #mapa {
+        height: 100%;
+        margin: 0px;
+        padding: 0px
+      }
+    </style>
+
 	<body>
 
 		<?php echo $content_for_layout; ?>
