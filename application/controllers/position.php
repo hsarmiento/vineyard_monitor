@@ -26,8 +26,8 @@ class Position extends CI_Controller
 		}
 
 		$aData['aPosition'] = $this->Position_model->get_last_position($iPcbId);
-		$this->layout->view('last_position', $aData);
-		// $this->load->view('last_position', $aData);
+		$this->layout->css(array(base_url().'public/css/temperatura.css'));
+		$this->layout->view('last_position', $aData);		
 	}	
 
 	public function ajax_view($iPcbId)
