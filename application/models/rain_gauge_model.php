@@ -28,4 +28,14 @@ class Rain_gauge_model extends CI_Model {
         return FALSE;       
     }
 
+    public function get_last_rain($sensor_id)
+    {
+        $this->db->select('*')
+        ->from('rain_gauge')
+        ->where('sensor_id', $sensor_id)
+        ->order_by('created_at','desc')
+        ->limit(1);
+        return $this->db->get()->row_array();
+    }
+
 }

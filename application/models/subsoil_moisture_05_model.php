@@ -28,4 +28,14 @@ class Subsoil_moisture_05_model extends CI_Model {
         return FALSE;       
     }
 
+    public function get_last_subsoil($sensor_id)
+    {
+        $this->db->select('*')
+        ->from('subsoil_moisture_05')
+        ->where('sensor_id', $sensor_id)
+        ->order_by('created_at','desc')
+        ->limit(1);
+        return $this->db->get()->row_array();
+    }
+
 }

@@ -42,36 +42,13 @@ class Pcb_model extends CI_Model {
         return $aQuery['id'];
     }
 
-    public function get_sensor_heater_with_pcb($pcb_id)
-    {
-        // para servidor
-        // $query = $this->db->query('select t1.id as pcb_id, t1.identifier as pcb_identifer, 
-        //     t2.id as sensor_id, t2.identifier as sensor_identifier,
-        //     t3.status as status, date_add(t3.created_at, interval 2 hour) as created_at,
-        //     date_add(t3.stopped_at , interval 2 hour) as stopped_at, t4.value as temperature from pcb as t1 join 
-        //     sensors as t2 on t1.id = t2.pcb_id 
-        //     join heaters as t3 on t2.id = t3.sensor_id 
-        //     left join temperature as t4 on t2.id = t4.sensor_id where t1.id = '.$pcb_id.'
-        //     order by t3.id desc limit 1;');
 
-        $query = $this->db->query('select t1.id as pcb_id, t1.identifier as pcb_identifer, 
-            t2.id as sensor_id, t2.identifier as sensor_identifier,
-            t3.status as status, t3.created_at as created_at,
-            t3.stopped_at as stopped_at, t4.value as temperature from pcbs as t1 join 
-            sensors as t2 on t1.id = t2.pcb_id 
-            join heaters as t3 on t2.id = t3.sensor_id 
-            left join temperature as t4 on t2.id = t4.sensor_id where t1.id = '.$pcb_id.'
-            order by t3.id desc limit 1;');
-        return $query->row_array();
-    }
-
-    public function get_pcb_id_with_trailer($trailer_id)
+    public function get_pcb_with_vineyard($vineyard_id)
     {
-        $this->db->select('id')
+        $this->db->select('*')
         ->from('pcbs')
-        ->where('trailer_id', $trailer_id);
-        $aQuery = $this->db->get()->row_array();
-        return $aQuery['id'];
+        ->where('vineyard_id', $vineyard_id);
+        return $this->db->get()->result_array();
     }
 
 }

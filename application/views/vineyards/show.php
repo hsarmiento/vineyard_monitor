@@ -1,4 +1,6 @@
 
+
+
 <div id="logo"><img src="<?php echo base_url()?>public/img/logo_radic.png" width="138" height="163" /></div>
 <!--Fin logo-->
 
@@ -12,17 +14,27 @@
 			    <td width="29%" align="center" valign="bottom">&nbsp;</td>
 		    </tr>
 		    <tr>
-			    <td height="15" align="center" valign="bottom">Sensor A</td>
-			    <td align="center" valign="bottom">&nbsp;</td>
-			    <td align="center" valign="bottom">Sensor B</td>
+		    	<?php
+		    	 foreach ($aData['WG'] as $key => $data) { ?>
+		    	 	<td height="15" align="center" valign="bottom"><?=$key?></td>
+		    	 	<td align="center" valign="bottom">&nbsp;</td>	    	
+		    	 	<?php 
+		    		}
+		    	?>
 		    </tr>
 	    </table>
 	</div>
 
     <table width="100%" height="51" border="0" cellpadding="0" cellspacing="0">
 	    <tr>
-		    <td width="46%" align="center" valign="middle">1 mm</td>
-		    <td width="47%" align="center" valign="middle">2 mm</td>
+	    	<?php
+	    	 foreach ($aData['WG'] as $data) { ?>
+	    	 	<td width="47%" align="center" valign="middle"><?=$data['value']?> m/s Sur</td> 	    	
+	    	 	<?php 
+	    		}
+	    	?>
+		    <!-- <td width="46%" align="center" valign="middle">1 mm</td>
+		    <td width="47%" align="center" valign="middle">2 mm</td> -->
 		    <td width="7%" align="center" valign="middle">&nbsp;</td>
 	    </tr>
     </table>
@@ -39,17 +51,25 @@
 				<td width="34%" align="center" valign="bottom">&nbsp;</td>
 			</tr>
 			<tr>
-				<td align="center" valign="bottom">Sensor A</td>
-				<td align="center" valign="bottom">&nbsp;</td>
-				<td align="center" valign="bottom">Sensor B</td>
+				<?php
+		    	 foreach ($aData['TM'] as $key => $data) { ?>
+		    	 	<td height="15" align="center" valign="bottom"><?=$key?></td>
+		    	 	<td align="center" valign="bottom">&nbsp;</td>	    	
+		    	 	<?php 
+		    		}
+		    	?>
 			</tr>
 		</table>
 	</div>
 
 	<table width="100%" height="51" border="0" cellpadding="0" cellspacing="0">
 		<tr>
-			<td width="46%" align="center" valign="middle">23°C</td>
-			<td width="47%" align="center" valign="middle">22°C</td>
+			<?php
+		    	 foreach ($aData['TM'] as $key => $data) { ?>
+		    	 	<td width="46%" align="center" valign="middle"><?=$data['value']?>°C</td>    	
+		    	 	<?php 
+		    		}
+	    	?>
 			<td width="7%" align="center" valign="middle">&nbsp;</td>
 		</tr>
 	</table>
@@ -72,8 +92,12 @@
 			    	<div align="left">
 					    <table width="55" border="0" cellspacing="4" cellpadding="2">
 					    <tr>
-					    <td align="center" valign="middle" bgcolor="#666666" class="link_a"><a href="#">A</a></td>
-					    <td align="center" valign="middle" bgcolor="#666666" class="link_b"><a href="#">B</a></td>
+					    <?php
+					    	$aKey = array_keys($aMoisture);
+					    	// print_r($aKey);
+					    ?>    	
+					    <td align="center" valign="middle" bgcolor="#666666" class="link_a"><a href="#"><?=$aKey[0]?></a></td>
+					    <td align="center" valign="middle" bgcolor="#666666" class="link_b"><a href="#"><?=$aKey[1]?></a></td>
 					    </tr>
 					    </table>
 			    	</div>
@@ -85,26 +109,26 @@
 <!--inicio desplegables A-B humedad-->
     <div id="a_humedad">
 	    <table width="100%" border="0" cellspacing="0" cellpadding="0">
-		    <tr>
-			    <td width="74%"> <span class="bold_humedad">A</span> - Humedad Ambiente</td>
-			    <td width="13%">HR%:</td>
-			    <td width="13%" class="bold_humedad">98</td>
-		    </tr>
-		    <tr>
-			    <td><span class="bold_humedad">A</span> -  Humedad Sub-suelo (0,5 mts) </td>
-			    <td> Cbs:</td>
-			    <td class="bold_humedad">30.07</td>
-		    </tr>
-		    <tr>
-			    <td><span class="bold_humedad">A</span> -  Humedad Sub-suelo (0,01mts) </td>
-			    <td> Cbs:</td>
-			    <td class="bold_humedad">20.3</td>
-		    </tr>
-		    <tr>
-			    <td><span class="bold_humedad">A</span> -  Humectación en Hojas</td>
-			    <td>Cbs:</td>
-			    <td class="bold_humedad">4</td>
-		    </tr>
+	    		<tr>
+				    <td width="74%"> <span class="bold_humedad"><?=$aKey[0]?></span> - Humedad Ambiente</td>
+				    <td width="13%">HR%:</td>
+				    <td width="13%" class="bold_humedad"><?=$aMoisture[$aKey[0]]['AM']['value']?></td>
+		    	</tr>
+		    	<tr>
+				    <td><span class="bold_humedad"><?=$aKey[0]?></span> -  Humedad Sub-suelo (0,5 mts) </td>
+				    <td> Cbs:</td>
+				    <td class="bold_humedad"><?=$aMoisture[$aKey[0]]['SM05']['value']?></td>
+		    	</tr>
+		    	<tr>
+				    <td><span class="bold_humedad"><?=$aKey[0]?></span> -  Humedad Sub-suelo (0,01mts) </td>
+				    <td> Cbs:</td>
+				    <td class="bold_humedad"><?=$aMoisture[$aKey[0]]['SM001']['value']?></td>
+		    	</tr>
+		    	<tr>
+				    <td><span class="bold_humedad"><?=$aKey[0]?></span> -  Humectación en Hojas</td>
+				    <td>Cbs:</td>
+				    <td class="bold_humedad"><?=$aMoisture[$aKey[0]]['LM']['value']?></td>
+		    	</tr>	    
 	    </table>
 
     </div>
@@ -113,24 +137,24 @@
     <div id="b_humedad">
       	<table width="100%" border="0" cellspacing="0" cellpadding="0">
 		    <tr>
-			    <td width="74%"> <span class="bold_humedad">B</span> - Humedad Ambiente</td>
+			    <td width="74%"> <span class="bold_humedad"><?=$aKey[1]?></span> - Humedad Ambiente</td>
 			    <td width="13%">HR%:</td>
-			    <td width="13%" class="bold_humedad">98</td>
+			    <td width="13%" class="bold_humedad"><?=$aMoisture[$aKey[1]]['AM']['value']?></td>
 		    </tr>
 		    <tr>
-			    <td><span class="bold_humedad">B</span> -  Humedad Sub-suelo (0,5 mts) </td>
+			    <td><span class="bold_humedad"><?=$aKey[1]?></span> -  Humedad Sub-suelo (0,5 mts) </td>
 			    <td> Cbs:</td>
-			    <td class="bold_humedad">30.07</td>
+			    <td class="bold_humedad"><?=$aMoisture[$aKey[1]]['SM05']['value']?></td>
 		    </tr>
 		    <tr>
-			    <td><span class="bold_humedad">B</span> -  Humedad Sub-suelo (0,01mts) </td>
+			    <td><span class="bold_humedad"><?=$aKey[1]?></span> -  Humedad Sub-suelo (0,01mts) </td>
 			    <td> Cbs:</td>
-			    <td class="bold_humedad">20.3</td>
+			    <td class="bold_humedad"><?=$aMoisture[$aKey[1]]['SM001']['value']?></td>
 		    </tr>
 		    <tr>
-			    <td><span class="bold_humedad">B</span> -  Humectación en Hojas</td>
+			    <td><span class="bold_humedad"><?=$aKey[1]?></span> -  Humectación en Hojas</td>
 			    <td>Cbs:</td>
-			    <td class="bold_humedad">4</td>
+			    <td class="bold_humedad"><?=$aMoisture[$aKey[1]]['LM']['value']?></td>
 		    </tr>
 	    </table>
     </div>
@@ -150,16 +174,24 @@
 				<td width="34%" align="center" valign="bottom">&nbsp;</td>
 			</tr>
 			<tr>
-				<td align="center" valign="bottom">Sensor A</td>
-				<td align="center" valign="bottom">&nbsp;</td>
-				<td align="center" valign="bottom">Sensor B</td>
+				<?php
+		    	 foreach ($aData['RG'] as $key => $data) { ?>
+		    	 	<td align="center" valign="bottom"><?=$key?></td>
+		    	 	<td align="center" valign="bottom">&nbsp;</td> 	
+		    	 	<?php 
+		    		}
+	    		?>
 			</tr>
 		</table>
 	</div>
 	<table width="100%" height="51" border="0" cellpadding="0" cellspacing="0">
 		<tr>
-			<td width="52%" align="center" valign="middle">5m/s Sur</td>
-			<td width="41%" align="center" valign="middle">5m/s Sur</td>
+			<?php
+		    	 foreach ($aData['RG'] as $key => $data) { ?>
+		    	 	<td width="52%" align="center" valign="middle"><?=$data['value']?>mm</td> 	
+		    	 	<?php 
+		    		}
+	    		?>
 			<td width="7%" align="center" valign="middle">&nbsp;</td>
 		</tr>
 	</table>
@@ -177,7 +209,7 @@
 		    <div class="buttons"><a href="#">item</a></div>
 		    <div class="buttons_2"></div>
 		    <div class="buttons_temperatura"><a href="#">item</a></div>
-		    <div class="buttons_full"><a href="<?php echo base_url()?>vineyards/data">item</a></div>
+		    <div class="buttons_full"><a href="<?php echo base_url()?>vineyards/data/<?=$vineyard_name?>">item</a></div>
 		    <div class="buttons_lluvia"><a href="#">item</a></div>
 		    <div class="buttons_2"></div>
 		    <div class="buttons_viento"><a href="#">item</a></div>
