@@ -1,0 +1,258 @@
+body {
+	margin: 0px;
+	
+	background-color: #9F9F9C;
+}
+
+
+
+#top {
+	background-image: url(../img/top.png);
+	background-repeat: repeat;
+	background-position: center center;
+	position: absolute;
+	z-index: 10;
+	top: 0px;
+	height: 335px;
+	width: 100%;
+}
+
+#foot {
+	background-image: url(../img/footer.png);
+	background-repeat: repeat;
+	background-position: center top;
+	position: absolute;
+	z-index: 11;
+	bottom: 0px;
+	height: 335px;
+	width: 100%;
+}
+
+#logo{
+	height: 138px;
+	width: 163px;
+	position: absolute;
+	z-index: 99999999;
+	left: 20%;
+	top: 0px;
+
+}
+
+
+#central {
+	background-image: url(../img/bg_central3.png);
+	background-repeat: repeat;
+	background-position: center center;
+	height: 516px;
+	width: 100%;
+	position: absolute;
+	z-index: 20;
+	top: 60px;
+}
+
+
+
+#central_cont {
+	height: 400px;
+	width: 800px;
+	margin-top: 70px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#central_grafico {
+	height: 380px;
+	width: 350px;
+	float: left;
+	
+	}
+
+#titulo_grafico {
+	height: 50px;
+	width: 100%;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	color: #CCC;
+	text-align: center;
+	vertical-align: middle;
+	}
+
+#titulo_gps {
+	height: 50px;
+	width: 100%;
+		font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	color: #CCC;
+	text-align: center;
+	vertical-align: middle;
+	}	
+		
+	
+
+#central_menu {
+	height: 380px;
+	width: 80px;
+	float: left;
+	background-image: url(../img/bg_menu.png);
+	background-repeat: no-repeat;
+	background-position: -1px center;
+}
+
+.boxs_menu_temperatura {
+	height: 50px;
+	width: 80px;
+}
+
+.boxs_menu_temperatura a {
+	height: 50px;
+	width: 80px;
+	color: #454948;
+	background-image: url(../img/bt_menu_temp1.png);
+	background-position: -3px center;
+	display: block;
+}
+
+.boxs_menu_temperatura a:hover {
+	height: 50px;
+	width: 80px;
+	background-image: url(../img/bt_menu_temp2.png);
+	background-position: -3px center;
+	display: block;
+}
+
+.boxs_menu_humedad {
+	height: 50px;
+	width: 80px;
+}
+
+
+.boxs_menu_humedad a {
+	height: 50px;
+	width: 80px;
+    color: #454948;
+	background-image: url(../img/bt_menu_humedad1.png);
+	background-position: -3px center;
+	display: block;
+}
+
+
+.boxs_menu_humedad a:hover {
+	height: 50px;
+	width: 80px;
+	background-image: url(../img/bt_menu_humedad2.png);
+	background-position: -3px center;
+	display: block;
+}
+
+.boxs_menu_viento {
+	height: 50px;
+	width: 80px;
+}
+
+.boxs_menu_viento a {
+	height: 50px;
+	width: 80px;
+	color: #454948;
+	background-image: url(../img/bt_menu_viento1.png);
+	background-position: -3px center;
+	display: block;
+}
+
+.boxs_menu_viento a:hover {
+	height: 50px;
+	width: 80px;
+
+	background-image: url(../img/bt_menu_viento2.png);
+	background-position: -3px center;
+	display: block;
+}
+
+
+.boxs_menu_precipitacion {
+	height: 50px;
+	width: 80px;
+}
+
+.boxs_menu_precipitacion a {
+	height: 50px;
+	width: 80px;
+	color: #454948;
+	background-image: url(../img/bt_menu_lluvia1.png);
+	background-position: -3px center;
+	display: block;
+}
+
+.boxs_menu_precipitacion a:hover {
+	height: 50px;
+	width: 80px;
+
+	background-image: url(../img/bt_menu_lluvia2.png);
+	background-position: -3px center;
+	display: block;
+}
+
+
+#central_gps {
+	height: 380px;
+	width: 370px;
+	float: right;
+}
+
+
+#embedl_grafico {
+	height: 320px;
+	width: 100%;
+	
+}
+
+#embedl_gps {
+	height: 300px;
+	width: 100%;
+	height: 320px;
+	
+}
+
+
+
+.central_bt_cerrar {
+	font-size: 1px;
+
+	height: 212px;
+	width: 100px;
+	display: block;
+	float: left;
+	z-index: 9000;
+	top: 110px;
+	position: absolute;
+	color: #303030;
+}
+
+.central_bt_cerrar a {
+		color: #303030;
+	font-size: 1px;
+	height: 212px;
+	width: 100px;
+	display: block;
+	float: left;
+	z-index: 200;
+	top: 110px;
+	position: absolute;
+	background-image: url(../img/flechas.png);
+	background-position: -70px;
+	}
+	
+.central_bt_cerrar a:hover {
+		color: #303030;
+	font-size: 1px;
+	font-weight: bold;
+	font-family: 'Gudea', sans-serif;
+	height: 212px;
+	width: 100px;
+	display: block;
+	float: left;
+	z-index: 200;
+	top: 110px;
+	position: absolute;
+	background-image: url(../img/flechas.png);
+	background-position: 5px
+	}

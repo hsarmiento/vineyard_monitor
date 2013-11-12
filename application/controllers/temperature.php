@@ -95,7 +95,7 @@ class Temperature extends CI_Controller {
 		}
 
 		$aData['aPosition'] = $this->Position_model->get_last_position($pcb_id);
-		$aTrending = $this->temperature_model->get_trending_temperature($pcb_id);
+		$aTrending = $this->temperature_model->get_temperature_trending($pcb_id);
 		// $aTrailerData = $this->trailer_model->get_trailer_data($trailer_id);
 		// $aTemp = array();
 		foreach ($aTrending as $trending) {

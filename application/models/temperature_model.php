@@ -101,7 +101,7 @@ class Temperature_model extends CI_Model {
     }
 
 
-    public function get_trending_temperature($pcb_id)
+    public function get_temperature_trending($pcb_id)
     {
         $query = $this->db->query("SELECT t1.identifier as pcb_identifier, t1.id as pcb_id, 
                 t2.id sensor_id, t2.identifier sensor_identifier, t2.type as sensor_type, 
