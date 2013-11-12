@@ -84,24 +84,28 @@ class Temperature extends CI_Controller {
 		// }
 	}
 
-
-	public function prueba()
+	public function show($pcb_id)
 	{
-		$this->load->model('alarm_event_model');
-		var_dump($this->alarm_event_model->get_all_alert());
-	}
+		$this->load->model('pcb_model');
+		$this->load->model('Position_model');
 
-	public function view_all()
-	{
-		$this->db->select('*')
-		->from('temperature')
-		->order_by('id','desc');
-		$aResultTemp = $this->db->get()->result_array();
-		$this->db->select('*')
-		->from('position')
-		->order_by('id','desc');
-		$aResultPos = $this->db->get()->result_array();
-		$this->layout->view('view_all',compact('aResultTemp', 'aResultPos'));
+		if ($this->pcb_model->exist_pcbid($pcb_id) === false)
+		{
+			show_error('No se registran datos para esta unidad sensorial');
+		}
+
+		$aData['aPosition'] = $this->Position_model->get_last_position($pcb_id);
+		$aTrending = $this->temperature_model->get_trending_temperature($pcb_id);
+		// $aTrailerData = $this->trailer_model->get_trailer_data($trailer_id);
+		// $aTemp = array();
+		foreach ($aTrending as $trending) {
+				$aData['aTemp'][] = "[".(mktime(date("H", strtotime($trending['created_at']))-4, date("i", strtotime($trending['created_at'])), date("s", strtotime($trending['created_at'])), date("m", strtotime($trending['created_at'])), date("d", strtotime($trending['created_at'])), date("Y", strtotime($trending['created_at'])))*1000).",".$trending['temp_value']."]";
+				// $strIdentifier1 = $temp['sensor_identifier'];
+		}
+		$aData['pcb_id'] = $pcb_id;	
+		// print_r($aData['aTemp']);
+		$this->layout->css(array(base_url().'public/css/temperatura.css'));
+		$this->layout->view('show', $aData);
 	}
 }
 
