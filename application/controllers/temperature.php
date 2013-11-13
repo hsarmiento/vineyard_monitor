@@ -84,7 +84,7 @@ class Temperature extends CI_Controller {
 		// }
 	}
 
-	public function show($pcb_id)
+	public function show($vineyard_name, $pcb_id)
 	{
 		$this->load->model('pcb_model');
 		$this->load->model('Position_model');
@@ -103,7 +103,8 @@ class Temperature extends CI_Controller {
 				// $strIdentifier1 = $temp['sensor_identifier'];
 		}
 		$aData['pcb_id'] = $pcb_id;	
-		// print_r($aData['aTemp']);
+		$aData['vineyard_name'] = $vineyard_name;	
+		$this->layout->setTitle('Monitor de Viñas | Temperatura');
 		$this->layout->css(array(base_url().'public/css/temperatura.css'));
 		$this->layout->view('show', $aData);
 	}

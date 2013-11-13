@@ -2,7 +2,6 @@
     <div id="logo"><img src="<?php echo base_url()?>public/img/logo_radic.png" width="138" height="163" /></div>
 <!--Fin logo-->
 
-
 <!--BT_cerrar-->
     <div class="central_bt_cerrar"><a href="<?php echo base_url()?>vineyards/data/<?=$vineyard_name?>">cerrar</a></div>
 <!--BT_cerrar-->
@@ -16,7 +15,7 @@
     <div id="central_grafico">
     
 <!--inicio titulo -->     
-    <div id="titulo_grafico"> Vel. Viento| Gráfico</div>
+    <div id="titulo_grafico"> Humedad | Gráfico</div>
 <!--fin titulo -->  
 
 <!--inicio grafico -->        
@@ -30,20 +29,21 @@
         <div class="boxs_menu_temperatura"></div><!--Ignorra No borrar-->
         <div class="boxs_menu_temperatura"></div><!--Ignorra No borrar-->
         <div class="boxs_menu_temperatura"><a href="<?php echo base_url()?>temperature/show/<?=$vineyard_name?>/<?=$pcb_id?>" title="Temperatura">ir</a></div>
-        <div class="boxs_menu_humedad"><a href="<?php echo base_url()?>moisture/show/<?=$vineyard_name?>/<?=$pcb_id?>" title="Humedad">ir</a></div>
-        <div class="boxs_menu_viento"><a href="#" title="Viento">ir</a></div>
+        <div class="boxs_menu_humedad"><a href="#" title="Humedad">ir</a></div>
+        <div class="boxs_menu_viento"><a href="<?php echo base_url()?>wind_gauge/show/<?=$vineyard_name?>/<?=$pcb_id?>" title="Viento">ir</a></div>
         <div class="boxs_menu_precipitacion"><a href="<?php echo base_url()?>rain_gauge/show/<?=$vineyard_name?>/<?=$pcb_id?>" title="Precipitaciones">ir</a></div>
         <!--Fin menu central-->  
     </div>
     <div id="central_gps">
     
 <!--inicio titulo gps -->   
-    <div id="titulo_gps">Vel. Viento | GPS A - B</div>
+    <div id="titulo_gps">Humedad | GPS A - B</div>
 <!--fin titulo gps -->   
 
      
 <!--inicio mapa gps -->        
-     <div id="embedl_gps"></div>
+     <div id="embedl_gps">
+      </div>
 <!--ifin mapa gps --> 
     
     </div>
@@ -60,7 +60,6 @@
 
     <div id="top"></div>
     <div id="foot"></div>
-
 
 <script>
     var map;
@@ -117,7 +116,7 @@
     $(function () {
         $('#embedl_grafico').highcharts({
             title: {
-                text: 'Viento',
+                text: 'Humedad',
                 x: -20 //center
             },
             subtitle: {
@@ -140,7 +139,7 @@
             yAxis: {
 
                 title: {
-                    text: 'Viento m/s'
+                    text: 'Humedad %'
                 },
                 min: 0,
                 max: 200,
@@ -163,8 +162,17 @@
                 }
             },
             series: [{
-                name: 'Viento m/s',
-                data: [<?php echo implode($aWind, ",");?>]          
+                name: 'Humedad Ambiente [%]',
+                data: [<?php echo implode($aAmbient, ",");?>]          
+            },{
+                name: 'Humedad Hoja [%]',
+                data: [<?php echo implode($aLeaves, ",");?>]
+            },{
+                name: 'Humedad Subsuelo 0.5m [%]',
+                data: [<?php echo implode($aSubsoil05, ",");?>]
+            },{
+                name: 'Humedad Subsuelo 0.01m [%]',
+                data: [<?php echo implode($aSubsoil001, ",");?>]
             }]
         });
     });

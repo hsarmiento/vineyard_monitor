@@ -6,7 +6,7 @@
 <!--Fin logo-->
 
 <!--BT_cerrar-->
-    <div class="central_bt_cerrar"><a href="../home_back.html">cerrar</a></div>
+    <div class="central_bt_cerrar"><a href="<?php echo base_url()?>vineyards/data/<?=$vineyard_name?>">cerrar</a></div>
 <!--BT_cerrar-->
 
 
@@ -31,9 +31,9 @@
 			<div class="boxs_menu_temperatura"></div><!--Ignorra No borrar-->
 			<div class="boxs_menu_temperatura"></div><!--Ignorra No borrar-->
 			<div class="boxs_menu_temperatura"><a href="#" title="Temperatura">ir</a></div>
-			<div class="boxs_menu_humedad"><a href="<?php echo base_url()?>moisture/<?=$pcb_id?>" title="Humedad">ir</a></div>
-			<div class="boxs_menu_viento"><a href="<?php echo base_url()?>wind_gauge/<?=$pcb_id?>" title="Viento">ir</a></div>
-			<div class="boxs_menu_precipitacion"><a href="<?php echo base_url()?>rain_gauge/<?=$pcb_id?>" title="Precipitaciones">ir</a></div>
+			<div class="boxs_menu_humedad"><a href="<?php echo base_url()?>moisture/show/<?=$vineyard_name?>/<?=$pcb_id?>" title="Humedad">ir</a></div>
+			<div class="boxs_menu_viento"><a href="<?php echo base_url()?>wind_gauge/show/<?=$vineyard_name?>/<?=$pcb_id?>" title="Viento">ir</a></div>
+			<div class="boxs_menu_precipitacion"><a href="<?php echo base_url()?>rain_gauge/show/<?=$vineyard_name?>/<?=$pcb_id?>" title="Precipitaciones">ir</a></div>
 			<!--Fin menu central-->  
 		</div>
 		

@@ -15,7 +15,7 @@ class Vineyards extends CI_Controller
 		redirect('/vineyards/show/viña tu hermana');
 	}
 
-	public function show($vineyard_name)
+	public function show($vineyard_name, $pcb_id)
 	{
 
 		$this->load->model('ambient_moisture_model');

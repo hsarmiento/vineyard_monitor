@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Wind_gauge extends CI_Controller {
+class Rain_gauge extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -22,7 +22,7 @@ class Wind_gauge extends CI_Controller {
 	{
 		parent::__construct();
         $this->layout->setLayout('layout');
-        $this->load->model('wind_gauge_model');
+        $this->load->model('rain_gauge_model');
 	}
 	
 	public function index()
@@ -30,7 +30,7 @@ class Wind_gauge extends CI_Controller {
 		$this->layout->view('index');
 	}
 
-	public function show($vineyard_name,$pcb_id)
+	public function show($vineyard_name, $pcb_id)
 	{
 		$this->load->model('pcb_model');
 		$this->load->model('Position_model');
@@ -41,16 +41,16 @@ class Wind_gauge extends CI_Controller {
 		}
 
 		$aData['aPosition'] = $this->Position_model->get_last_position($pcb_id);
-		$aTrending = $this->wind_gauge_model->get_wind_trending($pcb_id);
+		$aTrending = $this->rain_gauge_model->get_rain_trending($pcb_id);
 		// $aTrailerData = $this->trailer_model->get_trailer_data($trailer_id);
 		foreach ($aTrending as $trending) {
-				$aData['aWind'][] = "[".(mktime(date("H", strtotime($trending['created_at']))-4, date("i", strtotime($trending['created_at'])), date("s", strtotime($trending['created_at'])), date("m", strtotime($trending['created_at'])), date("d", strtotime($trending['created_at'])), date("Y", strtotime($trending['created_at'])))*1000).",".$trending['temp_value']."]";
+				$aData['aRain'][] = "[".(mktime(date("H", strtotime($trending['created_at']))-4, date("i", strtotime($trending['created_at'])), date("s", strtotime($trending['created_at'])), date("m", strtotime($trending['created_at'])), date("d", strtotime($trending['created_at'])), date("Y", strtotime($trending['created_at'])))*1000).",".$trending['temp_value']."]";
 				// $strIdentifier1 = $temp['sensor_identifier'];
 		}
 		$aData['pcb_id'] = $pcb_id;	
 		$aData['vineyard_name'] = $vineyard_name;	
-		$this->layout->setTitle('Monitor de Viñas | Viento');
-		$this->layout->css(array(base_url().'public/css/viento.css'));
+		$this->layout->setTitle('Monitor de Viñas | Precipitaciones');
+		$this->layout->css(array(base_url().'public/css/precipitacion.css'));
 		$this->layout->view('show', $aData);
 	}
 }

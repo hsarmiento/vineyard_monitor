@@ -7,7 +7,6 @@
     <div class="central_bt_cerrar"><a href="<?php echo base_url()?>vineyards/data/<?=$vineyard_name?>">cerrar</a></div>
 <!--BT_cerrar-->
 
-
 <!--inicio central-->
     <div id="central">
     
@@ -16,7 +15,7 @@
     <div id="central_grafico">
     
 <!--inicio titulo -->     
-    <div id="titulo_grafico"> Vel. Viento| Gráfico</div>
+    <div id="titulo_grafico"> Precipitaciones | Gráfico</div>
 <!--fin titulo -->  
 
 <!--inicio grafico -->        
@@ -31,19 +30,23 @@
         <div class="boxs_menu_temperatura"></div><!--Ignorra No borrar-->
         <div class="boxs_menu_temperatura"><a href="<?php echo base_url()?>temperature/show/<?=$vineyard_name?>/<?=$pcb_id?>" title="Temperatura">ir</a></div>
         <div class="boxs_menu_humedad"><a href="<?php echo base_url()?>moisture/show/<?=$vineyard_name?>/<?=$pcb_id?>" title="Humedad">ir</a></div>
-        <div class="boxs_menu_viento"><a href="#" title="Viento">ir</a></div>
-        <div class="boxs_menu_precipitacion"><a href="<?php echo base_url()?>rain_gauge/show/<?=$vineyard_name?>/<?=$pcb_id?>" title="Precipitaciones">ir</a></div>
+        <div class="boxs_menu_viento"><a href="<?php echo base_url()?>wind_gauge/show/<?=$vineyard_name?>/<?=$pcb_id?>" title="Viento">ir</a></div>
+        <div class="boxs_menu_precipitacion"><a href="#" title="Precipitaciones" >ir</a></div>
         <!--Fin menu central-->  
     </div>
     <div id="central_gps">
     
 <!--inicio titulo gps -->   
-    <div id="titulo_gps">Vel. Viento | GPS A - B</div>
+    <div id="titulo_gps">Precipitaciones | GPS A - B</div>
 <!--fin titulo gps -->   
 
      
 <!--inicio mapa gps -->        
-     <div id="embedl_gps"></div>
+     <div id="embedl_gps">
+     <iframe width="370" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src=  
+     "https://maps.google.cl/?ie=UTF8&amp;ll=-34.086787,-70.736847&amp;spn=0.885993,1.454315&amp;t=m&amp;z=10&amp;output=embed">
+      </iframe>
+      </div>
 <!--ifin mapa gps --> 
     
     </div>
@@ -62,7 +65,7 @@
     <div id="foot"></div>
 
 
-<script>
+    <script>
     var map;
     var bounds;
     var posicion;
@@ -117,7 +120,7 @@
     $(function () {
         $('#embedl_grafico').highcharts({
             title: {
-                text: 'Viento',
+                text: 'Precipitaciones',
                 x: -20 //center
             },
             subtitle: {
@@ -140,7 +143,7 @@
             yAxis: {
 
                 title: {
-                    text: 'Viento m/s'
+                    text: 'Precipitaciones [mm]'
                 },
                 min: 0,
                 max: 200,
@@ -163,8 +166,8 @@
                 }
             },
             series: [{
-                name: 'Viento m/s',
-                data: [<?php echo implode($aWind, ",");?>]          
+                name: 'Precipitaciones [mm]',
+                data: [<?php echo implode($aRain, ",");?>]          
             }]
         });
     });

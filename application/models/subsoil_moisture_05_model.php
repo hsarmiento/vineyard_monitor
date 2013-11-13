@@ -38,4 +38,17 @@ class Subsoil_moisture_05_model extends CI_Model {
         return $this->db->get()->row_array();
     }
 
+    public function get_subsoil05_trending($pcb_id)
+    {
+        $query = $this->db->query("SELECT t1.identifier as pcb_identifier, t1.id as pcb_id, 
+                t2.id sensor_id, t2.identifier sensor_identifier, t2.type as sensor_type, 
+                t3.value as temp_value, t3.created_at as created_at
+                from pcbs as t1 left join sensors as t2 on t1.id = t2.pcb_id left join subsoil_moisture_05
+                as t3 on t2.id = t3.sensor_id where t1.id = ".$pcb_id." and t2.type = 'SM05' and t3.created_at >= NOW() - INTERVAL 3 DAY 
+                ORDER BY t2.id asc, t3.created_at asc;"
+            );
+        return $query->result_array();
+        
+    }
+
 }
