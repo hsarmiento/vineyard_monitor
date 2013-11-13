@@ -228,7 +228,7 @@
   <!--Fin Central Modulos-->      
         
   <!--BT_cerrar-->
-  <div class="central_bt_cerrar"><a href="<?php echo base_url()?>vineyards/show">cerrar</a></div>
+  <div class="central_bt_cerrar"><a href="<?php echo base_url()?>vineyards/show/<?php echo $sVineyardName;?>">cerrar</a></div>
   <!--BT_cerrar-->
 
 </div>
@@ -303,7 +303,7 @@
 
     setInterval(function(){
       $.ajax({
-        url: "<?php echo base_url()?>vineyards/ajax_data_view/viña tu hermana",
+        url: "<?php echo base_url();?>vineyards/ajax_data_view/<?php echo $sVineyardName;?>",
         dataType: 'json',
         cache: false
       }).done(function(data){
@@ -315,7 +315,7 @@
         $("#SM05_1").html(data.pcb1.SM05.value);
         $("#TM1").html(data.pcb1.TM.value + ' °C');
         $("#WG1").html(data.pcb1.WG.value + 'm/s Sur');
-    });
-  },1000);
+      });
+    },1000);
 
 </script>

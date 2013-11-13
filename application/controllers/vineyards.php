@@ -82,10 +82,11 @@ class Vineyards extends CI_Controller
 		$this->layout->view('show', compact('vineyard_name','aData', 'aMoisture'));
 	}
 
-	public function data()
+	public function data($sVineyardName)
 	{
+		$sVineyardName =   urldecode($sVineyardName);
 		$this->layout->css(array(base_url().'public/css/estilo.css', base_url().'public/css/google_family_gudea.css',base_url().'public/css/home_back.css'));
-		$this->layout->view('data');
+		$this->layout->view('data', compact('sVineyardName'));
 	}
 
 	public function ajax_data_view($sVineyardName)
