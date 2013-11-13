@@ -1,3 +1,7 @@
+<?php
+$aKey = array_keys($aMoisture);
+?> 
+
 <!--logo-->
 <div id="logo"><img src="<?php echo base_url()?>public/img/logo_radic.png" width="138" height="163" /></div>
 <!--Fin logo-->
@@ -11,28 +15,28 @@
       <div id="bloque_right_l1">
   <!--inicio Humedad sensor A-->      
         <div id="humedad_sa">
-          <div class="titulos_mod_chicos_pre">Humedad A</div>
+          <div class="titulos_mod_chicos_pre">Humedad <?=$aKey[0]?></div>
           <div class="info_mod_chicos_pre">
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
                 <tr>
                   <td height="23" colspan="2" class="tittle_lluvia">H.  Ambiente</td>
                   <td width="15%" class="tittle_lluvia_2">Hr%:</td>
-                  <td width="20%" class="tittle_lluvia_3" id="AM1">98</td>
+                  <td width="20%" class="tittle_lluvia_3" id="AM1"><?=$aMoisture[$aKey[0]]['AM']['value']?></td>
                 </tr>
                 <tr>
                   <td height="23" colspan="2" class="tittle_lluvia">H. Sub-suelo (0,5 mts)</td>
                   <td class="tittle_lluvia_2">Cbs:</td>
-                  <td class="tittle_lluvia_3" id="SM05_1">30.07</td>
+                  <td class="tittle_lluvia_3" id="SM05_1"><?=$aMoisture[$aKey[0]]['SM05']['value']?></td>
                 </tr>
                 <tr>
                   <td height="23" colspan="2" class="tittle_lluvia">H. Sub-suelo (0,01mts) </td>
                   <td class="tittle_lluvia_2">Cbs:</td>
-                  <td class="tittle_lluvia_3" id="SM001_1">20.3</td>
+                  <td class="tittle_lluvia_3" id="SM001_1"><?=$aMoisture[$aKey[0]]['SM001']['value']?></td>
                 </tr>
                 <tr>
                   <td height="23" colspan="2" class="tittle_lluvia">Humect. en Hojas</td>
                   <td class="tittle_lluvia_2">Cbs:</td>
-                  <td class="tittle_lluvia_3" id="LM1">4</td>
+                  <td class="tittle_lluvia_3" id="LM1"><?=$aMoisture[$aKey[0]]['LM']['value']?></td>
                 </tr>
             </table>
           </div>
@@ -40,7 +44,7 @@
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
               <tr>
                 <td width="15%">&nbsp;</td>
-                <td width="68%" align="center" valign="middle" class="link_graficogps_temp"><a href="#">Gráfico/GPS</a></td>
+                <td width="68%" align="center" valign="middle" class="link_graficogps_temp"><a href="<?php echo base_url()?>moisture/show/<?=$sVineyardName;?>/<?=$aMoisture[$aKey[0]]['LM']['pcb_id']?>">Gráfico/GPS</a></td>
                 <td width="17%" class="link_graficogps_temp">&nbsp;</td>
               </tr>
             </table>
@@ -50,28 +54,28 @@
       
   <!--inicio Humedad sensor B-->     
       <div id="humedad_sb">
-          <div class="titulos_mod_chicos_pre">Humedad  B</div>
+          <div class="titulos_mod_chicos_pre">Humedad  <?=$aKey[1]?></div>
           <div class="info_mod_chicos_pre">   
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
               <tr>
                 <td height="23" colspan="2" class="tittle_lluvia">H.  Ambiente</td>
                 <td width="15%" class="tittle_lluvia_2">Hr%:</td>
-                <td width="20%" class="tittle_lluvia_3" id="AM2">99</td>
+                <td width="20%" class="tittle_lluvia_3" id="AM2"><?=$aMoisture[$aKey[1]]['AM']['value']?></td>
               </tr>
               <tr>
                 <td height="23" colspan="2" class="tittle_lluvia">H. Sub-suelo (0,5 mts)</td>
                 <td class="tittle_lluvia_2">Cbs:</td>
-                <td class="tittle_lluvia_3" id="SM05_2">25.07</td>
+                <td class="tittle_lluvia_3" id="SM05_2"><?=$aMoisture[$aKey[1]]['SM05']['value']?></td>
               </tr>
               <tr>
                 <td height="23" colspan="2" class="tittle_lluvia">H. Sub-suelo (0,01mts) </td>
                 <td class="tittle_lluvia_2">Cbs:</td>
-                <td class="tittle_lluvia_3" id="SM001_2">65.3</td>
+                <td class="tittle_lluvia_3" id="SM001_2"><?=$aMoisture[$aKey[1]]['SM001']['value']?></td>
               </tr>
               <tr>
                 <td height="23" colspan="2" class="tittle_lluvia">Humect. en Hojas</td>
                 <td class="tittle_lluvia_2">Cbs:</td>
-                <td class="tittle_lluvia_3" id="LM2">10.6</td>
+                <td class="tittle_lluvia_3" id="LM2"><?=$aMoisture[$aKey[1]]['LM']['value']?></td>
               </tr>
             </table>          
         </div>
@@ -79,7 +83,7 @@
           <table width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr>
               <td width="15%">&nbsp;</td>
-              <td width="68%" align="center" valign="middle" class="link_graficogps_temp"><a href="#">Gráfico/GPS</a></td>
+              <td width="68%" align="center" valign="middle" class="link_graficogps_temp"><a href="<?php echo base_url()?>moisture/show/<?=$sVineyardName;?>/<?=$aMoisture[$aKey[1]]['LM']['pcb_id']?>">Gráfico/GPS</a></td>
               <td width="17%" class="link_graficogps_temp">&nbsp;</td>
             </tr>
             </table>
@@ -116,112 +120,132 @@
       
   <!--Area Temperatura-->    
     <div id="lineauno">    
-        <!--inicio modulo temperatura sensor a-->    
-      <div class="modulos_chicos_a">
-        <div class="titulos_mod_chicos">Temperatura A</div>
-        <div class="info_mod_chicos" id="TM1">23 °C</div>
-        <div class="link_mod_chicos">
-          <table width="100%" border="0" cellspacing="0" cellpadding="0">
-            <tr>
-              <td width="15%">&nbsp;</td>
-              <td width="68%" align="center" valign="middle" class="link_graficogps_temp"><a href="<?php echo base_url().'position/last_position/1' ?>">Gráfico/GPS</a></td>
-              <td width="17%" class="link_graficogps_temp">&nbsp;</td>
-            </tr>
-          </table>
-        </div>
-      </div>
-  <!--Fin modulo temperatura sensor a-->   
-
-      
-      <!--inicio modulo temperatura  sensor b-->      
-      <div class="modulos_chicos_b">
-        <div class="titulos_mod_chicos">Temperatura B</div>
-        <div class="info_mod_chicos" id="TM2">22 °C</div>
-        <div class="link_mod_chicos">
-          <table width="100%" border="0" cellspacing="0" cellpadding="0">
-            <tr>
-              <td width="15%">&nbsp;</td>
-              <td width="68%" align="center" valign="middle" class="link_graficogps_temp"><a href="#">Gráfico/GPS</a></td>
-              <td width="17%" class="link_graficogps_temp">&nbsp;</td>
-            </tr>
-          </table>
-        </div>
-      </div>
-  <!--Fin modulo temperatura  sensor b-->         
+       
+      <?php
+        $i = 0;
+        foreach ($aData['TM'] as $key => $value) { 
+          if($i%2==0){ ?>
+             <!--inicio modulo temperatura sensor a-->
+              <div class="modulos_chicos_a">
+                <div class="titulos_mod_chicos">Temperatura A</div>
+                <div class="info_mod_chicos" id="TM1"><?=$value['value']?> °C</div>
+                <div class="link_mod_chicos">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td width="15%">&nbsp;</td>
+                      <td width="68%" align="center" valign="middle" class="link_graficogps_temp"><a href="<?php echo base_url()?>temperature/show/<?=$sVineyardName;?>/<?=$value['pcb_id']?>">Gráfico/GPS</a></td>
+                      <td width="17%" class="link_graficogps_temp">&nbsp;</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+               <!--Fin modulo temperatura sensor a-->
+          <?php 
+           }else{ ?>
+              <!--inicio modulo temperatura  sensor b-->      
+              <div class="modulos_chicos_b">
+                <div class="titulos_mod_chicos">Temperatura B</div>
+                <div class="info_mod_chicos" id="TM2"><?=$value['value']?> °C</div>
+                <div class="link_mod_chicos">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td width="15%">&nbsp;</td>
+                      <td width="68%" align="center" valign="middle" class="link_graficogps_temp"><a href="<?php echo base_url()?>temperature/show/<?=$sVineyardName;?>/<?=$value['pcb_id']?>">Gráfico/GPS</a></td>
+                      <td width="17%" class="link_graficogps_temp">&nbsp;</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+          <!--Fin modulo temperatura  sensor b--> 
+          <?php } ?>       
+      <?php $i = $i+1;}  ?>             
     </div>
   <!--Fin  Temperatura-->
-   
+  
+
   <!--Area Viento-->       
     <div id="lineados">
-      <!--inicio modulo vel. viento sensor a-->          
-      <div class="modulos_chicos_a">
-        <div class="titulos_mod_chicos">Vel. Viento A</div>
-        <div class="info_mod_chicos_viento" id="WG1">5m/s Sur</div>
-        <div class="link_mod_chicos">
-          <table width="100%" border="0" cellspacing="0" cellpadding="0">
-            <tr>
-              <td width="15%">&nbsp;</td>
-              <td width="68%" align="center" valign="middle" class="link_graficogps_temp"><a href="grafmap/viento.html">Gráfico/GPS</a></td>
-              <td width="17%" class="link_graficogps_temp">&nbsp;</td>
-            </tr>
-          </table>
-        </div>
-      </div>
-  <!--Fin modulo vel. viento sensor a-->  
-
-
-      <!--inicio modulo vel. viento sensor b-->     
-      <div class="modulos_chicos_b">
-        <div class="titulos_mod_chicos">Vel. Viento B</div>
-        <div class="info_mod_chicos_viento" id="WG2">10m/s Sur</div>
-        <div class="link_mod_chicos">
-          <table width="100%" border="0" cellspacing="0" cellpadding="0">
-            <tr>
-              <td width="15%">&nbsp;</td>
-              <td width="68%" align="center" valign="middle" class="link_graficogps_temp"><a href="grafmap/viento.html">Gráfico/GPS</a></td>
-              <td width="17%" class="link_graficogps_temp">&nbsp;</td>
-            </tr>
-          </table>
-        </div>
-      </div>
-  <!--Fin modulo vel. viento sensor b-->  
+      <?php
+        $i = 0;
+        foreach ($aData['WG'] as $key => $value) { 
+          if($i%2==0){ ?>
+            <!--inicio modulo vel. viento sensor a-->          
+            <div class="modulos_chicos_a">
+              <div class="titulos_mod_chicos">Vel. Viento A</div>
+              <div class="info_mod_chicos_viento" id="WG1"><?=$value['value']?>m/s Sur</div>
+              <div class="link_mod_chicos">
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td width="15%">&nbsp;</td>
+                    <td width="68%" align="center" valign="middle" class="link_graficogps_temp"><a href="<?php echo base_url()?>wind_gauge/show/<?=$sVineyardName;?>/<?=$value['pcb_id']?>">Gráfico/GPS</a></td>
+                    <td width="17%" class="link_graficogps_temp">&nbsp;</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+        <!--Fin modulo vel. viento sensor a-->  
+      <?php 
+           }else{ ?>
+            <!--inicio modulo vel. viento sensor b-->     
+            <div class="modulos_chicos_b">
+              <div class="titulos_mod_chicos">Vel. Viento B</div>
+              <div class="info_mod_chicos_viento" id="WG2"><?=$value['value']?>m/s Sur</div>
+              <div class="link_mod_chicos">
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td width="15%">&nbsp;</td>
+                    <td width="68%" align="center" valign="middle" class="link_graficogps_temp"><a href="<?php echo base_url()?>wind_gauge/show/<?=$sVineyardName;?>/<?=$value['pcb_id']?>">Gráfico/GPS</a></td>
+                    <td width="17%" class="link_graficogps_temp">&nbsp;</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+        <!--Fin modulo vel. viento sensor b--> 
+        <?php } ?>       
+      <?php $i = $i+1;}  ?>  
     </div>
   <!--Fin Viento-->  
 
   <!--Area Precipitación-->        
-      <div id="lineatres">     
-      <!--inicio modulo Precipitación sensor a-->       
-        <div class="modulos_chicos_a">
-          <div class="titulos_mod_chicos">Precipitaciones A</div>
-          <div class="info_mod_chicos_prec" id="RG1">1000 mm</div>
-          <div class="link_mod_chicos">
-            <table width="100%" border="0" cellspacing="0" cellpadding="0">
-              <tr>
-                <td width="15%">&nbsp;</td>
-                <td width="68%" align="center" valign="middle" class="link_graficogps_temp"><a href="grafmap/precipitacion.html">Gráfico/GPS</a></td>
-                <td width="17%" class="link_graficogps_temp">&nbsp;</td>
-              </tr>
-            </table>
-          </div>
-        </div>
-  <!--Fin modulo Precipitación sensor a-->        
-        
-  <!--inicio modulo Precipitación sensor b-->       
-        <div class="modulos_chicos_b">
-          <div class="titulos_mod_chicos">Precipitaciones B</div>
-          <div class="info_mod_chicos_prec" id="RG2">1000 mm</div>
-          <div class="link_mod_chicos">
-            <table width="100%" border="0" cellspacing="0" cellpadding="0">
-              <tr>
-                <td width="15%">&nbsp;</td>
-                <td width="68%" align="center" valign="middle" class="link_graficogps_temp"><a href="grafmap/precipitacion.html">Gráfico/GPS</a></td>
-                <td width="17%" class="link_graficogps_temp">&nbsp;</td>
-              </tr>
-            </table>
-          </div>
-        </div>
-  <!--Fin modulo Precipitación sensor b-->       
-       
+      <div id="lineatres">
+      <?php
+        $i = 0;
+        foreach ($aData['RG'] as $key => $value) { 
+          if($i%2==0){ ?>     
+            <!--inicio modulo Precipitación sensor a-->       
+              <div class="modulos_chicos_a">
+                <div class="titulos_mod_chicos">Precipitaciones A</div>
+                <div class="info_mod_chicos_prec" id="RG1"><?=$value['value']?> mm</div>
+                <div class="link_mod_chicos">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td width="15%">&nbsp;</td>
+                      <td width="68%" align="center" valign="middle" class="link_graficogps_temp"><a href="<?php echo base_url()?>rain_gauge/show/<?=$sVineyardName;?>/<?=$value['pcb_id']?>">Gráfico/GPS</a></td>
+                      <td width="17%" class="link_graficogps_temp">&nbsp;</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+        <!--Fin modulo Precipitación sensor a-->    
+        <?php 
+           }else{ ?>    
+          <!--inicio modulo Precipitación sensor b-->       
+                <div class="modulos_chicos_b">
+                  <div class="titulos_mod_chicos">Precipitaciones B</div>
+                  <div class="info_mod_chicos_prec" id="RG2"><?=$value['value']?> mm</div>
+                  <div class="link_mod_chicos">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td width="15%">&nbsp;</td>
+                        <td width="68%" align="center" valign="middle" class="link_graficogps_temp"><a href="<?php echo base_url()?>rain_gauge/show/<?=$sVineyardName;?>/<?=$value['pcb_id']?>">Gráfico/GPS</a></td>
+                        <td width="17%" class="link_graficogps_temp">&nbsp;</td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+          <!--Fin modulo Precipitación sensor b-->       
+          <?php } ?>       
+        <?php $i = $i+1;}  ?> 
       </div>
   <!--Fin Precipitación-->      
   </div>
@@ -308,13 +332,14 @@
         cache: false
       }).done(function(data){
         // console.log(data.pcb1.TM.value);
-        $("#AM1").html(data.pcb1.AM.value);
-        $("#LM1").html(data.pcb1.LM.value);
-        $("#RG1").html(data.pcb1.RG.value + ' mm');
-        $("#SM001_1").html(data.pcb1.SM001.value);
-        $("#SM05_1").html(data.pcb1.SM05.value);
-        $("#TM1").html(data.pcb1.TM.value + ' °C');
-        $("#WG1").html(data.pcb1.WG.value + 'm/s Sur');
+        // console.log(data.pcb1);
+        // $("#AM1").html(data.pcb1.AM.value);
+        // $("#LM1").html(data.pcb1.LM.value);
+        // $("#RG1").html(data.pcb1.RG.value + ' mm');
+        // $("#SM001_1").html(data.pcb1.SM001.value);
+        // $("#SM05_1").html(data.pcb1.SM05.value);
+        // $("#TM1").html(data.pcb1.TM.value + ' °C');
+        // $("#WG1").html(data.pcb1.WG.value + 'm/s Sur');
       });
     },1000);
 
