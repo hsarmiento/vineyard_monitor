@@ -17,22 +17,22 @@
                 <tr>
                   <td height="23" colspan="2" class="tittle_lluvia">H.  Ambiente</td>
                   <td width="15%" class="tittle_lluvia_2">Hr%:</td>
-                  <td width="20%" class="tittle_lluvia_3">98</td>
+                  <td width="20%" class="tittle_lluvia_3" id="AM1">98</td>
                 </tr>
                 <tr>
                   <td height="23" colspan="2" class="tittle_lluvia">H. Sub-suelo (0,5 mts)</td>
                   <td class="tittle_lluvia_2">Cbs:</td>
-                  <td class="tittle_lluvia_3">30.07</td>
+                  <td class="tittle_lluvia_3" id="SM05_1">30.07</td>
                 </tr>
                 <tr>
                   <td height="23" colspan="2" class="tittle_lluvia">H. Sub-suelo (0,01mts) </td>
                   <td class="tittle_lluvia_2">Cbs:</td>
-                  <td class="tittle_lluvia_3">20.3</td>
+                  <td class="tittle_lluvia_3" id="SM001_1">20.3</td>
                 </tr>
                 <tr>
                   <td height="23" colspan="2" class="tittle_lluvia">Humect. en Hojas</td>
                   <td class="tittle_lluvia_2">Cbs:</td>
-                  <td class="tittle_lluvia_3">4</td>
+                  <td class="tittle_lluvia_3" id="LM1">4</td>
                 </tr>
             </table>
           </div>
@@ -56,22 +56,22 @@
               <tr>
                 <td height="23" colspan="2" class="tittle_lluvia">H.  Ambiente</td>
                 <td width="15%" class="tittle_lluvia_2">Hr%:</td>
-                <td width="20%" class="tittle_lluvia_3">99</td>
+                <td width="20%" class="tittle_lluvia_3" id="AM2">99</td>
               </tr>
               <tr>
                 <td height="23" colspan="2" class="tittle_lluvia">H. Sub-suelo (0,5 mts)</td>
                 <td class="tittle_lluvia_2">Cbs:</td>
-                <td class="tittle_lluvia_3">25.07</td>
+                <td class="tittle_lluvia_3" id="SM05_2">25.07</td>
               </tr>
               <tr>
                 <td height="23" colspan="2" class="tittle_lluvia">H. Sub-suelo (0,01mts) </td>
                 <td class="tittle_lluvia_2">Cbs:</td>
-                <td class="tittle_lluvia_3">65.3</td>
+                <td class="tittle_lluvia_3" id="SM001_2">65.3</td>
               </tr>
               <tr>
                 <td height="23" colspan="2" class="tittle_lluvia">Humect. en Hojas</td>
                 <td class="tittle_lluvia_2">Cbs:</td>
-                <td class="tittle_lluvia_3">10.6</td>
+                <td class="tittle_lluvia_3" id="LM2">10.6</td>
               </tr>
             </table>          
         </div>
@@ -119,12 +119,12 @@
         <!--inicio modulo temperatura sensor a-->    
       <div class="modulos_chicos_a">
         <div class="titulos_mod_chicos">Temperatura A</div>
-        <div class="info_mod_chicos">23 °C</div>
+        <div class="info_mod_chicos" id="TM1">23 °C</div>
         <div class="link_mod_chicos">
           <table width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr>
               <td width="15%">&nbsp;</td>
-              <td width="68%" align="center" valign="middle" class="link_graficogps_temp"><a href="grafmap/temperatura.html">Gráfico/GPS</a></td>
+              <td width="68%" align="center" valign="middle" class="link_graficogps_temp"><a href="<?php echo base_url().'position/last_position/1' ?>">Gráfico/GPS</a></td>
               <td width="17%" class="link_graficogps_temp">&nbsp;</td>
             </tr>
           </table>
@@ -136,7 +136,7 @@
       <!--inicio modulo temperatura  sensor b-->      
       <div class="modulos_chicos_b">
         <div class="titulos_mod_chicos">Temperatura B</div>
-        <div class="info_mod_chicos">22 °C</div>
+        <div class="info_mod_chicos" id="TM2">22 °C</div>
         <div class="link_mod_chicos">
           <table width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr>
@@ -156,7 +156,7 @@
       <!--inicio modulo vel. viento sensor a-->          
       <div class="modulos_chicos_a">
         <div class="titulos_mod_chicos">Vel. Viento A</div>
-        <div class="info_mod_chicos_viento">5m/s Sur</div>
+        <div class="info_mod_chicos_viento" id="WG1">5m/s Sur</div>
         <div class="link_mod_chicos">
           <table width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr>
@@ -173,7 +173,7 @@
       <!--inicio modulo vel. viento sensor b-->     
       <div class="modulos_chicos_b">
         <div class="titulos_mod_chicos">Vel. Viento B</div>
-        <div class="info_mod_chicos_viento">10m/s Sur</div>
+        <div class="info_mod_chicos_viento" id="WG2">10m/s Sur</div>
         <div class="link_mod_chicos">
           <table width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr>
@@ -193,7 +193,7 @@
       <!--inicio modulo Precipitación sensor a-->       
         <div class="modulos_chicos_a">
           <div class="titulos_mod_chicos">Precipitaciones A</div>
-          <div class="info_mod_chicos_prec">1000 mm</div>
+          <div class="info_mod_chicos_prec" id="RG1">1000 mm</div>
           <div class="link_mod_chicos">
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
               <tr>
@@ -209,7 +209,7 @@
   <!--inicio modulo Precipitación sensor b-->       
         <div class="modulos_chicos_b">
           <div class="titulos_mod_chicos">Precipitaciones B</div>
-          <div class="info_mod_chicos_prec">1000 mm</div>
+          <div class="info_mod_chicos_prec" id="RG2">1000 mm</div>
           <div class="link_mod_chicos">
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
               <tr>
@@ -228,7 +228,7 @@
   <!--Fin Central Modulos-->      
         
   <!--BT_cerrar-->
-  <div class="central_bt_cerrar"><a href="<?php echo base_url()?>vineyards/show">cerrar</a></div>
+  <div class="central_bt_cerrar"><a href="<?php echo base_url()?>vineyards/show/<?php echo $sVineyardName;?>">cerrar</a></div>
   <!--BT_cerrar-->
 
 </div>
@@ -266,39 +266,56 @@
     $(document).on("ready", function (){
 
       $('.buttons_temperatura').click(function(){
-    $('#info_box_temperatura').delay(500).fadeToggle();
-    });
+        $('#info_box_temperatura').delay(500).fadeToggle();
+      });
     
 
       $('.buttons_lluvia').click(function(){
-    $('#info_box_lluvia').delay(500).fadeToggle();
-    });
+        $('#info_box_lluvia').delay(500).fadeToggle();
+      });
     
-  
-    $('.buttons_viento').click(function(){
-    $('#info_box_viento').delay(500).fadeToggle();
-    });
+      $('.buttons_viento').click(function(){
+        $('#info_box_viento').delay(500).fadeToggle();
+      });
     
-    $('.buttons').click(function(){
-    $('#info_box_humedad').delay(500).fadeToggle();
-    });
+      $('.buttons').click(function(){
+        $('#info_box_humedad').delay(500).fadeToggle();
+      });
     
     // $('#central_full').delay(500).fadeToggle();
     
-    $('.central_bt_cerrar').click(function(){
-    $('#central_full').fadeOut();
-        });
+      $('.central_bt_cerrar').click(function(){
+        $('#central_full').fadeOut();
+      });
     
-    $('.link_a').click(function(){
-    $('#a_humedad').delay(500).fadeToggle();
-    $('#b_humedad').fadeOut();
-    });
+      $('.link_a').click(function(){
+        $('#a_humedad').delay(500).fadeToggle();
+        $('#b_humedad').fadeOut();
+      });
   
       $('.link_b').click(function(){
-    $('#b_humedad').delay(500).fadeToggle();
-    $('#a_humedad').fadeOut();
+        $('#b_humedad').delay(500).fadeToggle();
+        $('#a_humedad').fadeOut();
+      });
+    
+    
     });
-    
-    
-        });
+
+    setInterval(function(){
+      $.ajax({
+        url: "<?php echo base_url();?>vineyards/ajax_data_view/<?php echo $sVineyardName;?>",
+        dataType: 'json',
+        cache: false
+      }).done(function(data){
+        // console.log(data.pcb1.TM.value);
+        $("#AM1").html(data.pcb1.AM.value);
+        $("#LM1").html(data.pcb1.LM.value);
+        $("#RG1").html(data.pcb1.RG.value + ' mm');
+        $("#SM001_1").html(data.pcb1.SM001.value);
+        $("#SM05_1").html(data.pcb1.SM05.value);
+        $("#TM1").html(data.pcb1.TM.value + ' °C');
+        $("#WG1").html(data.pcb1.WG.value + 'm/s Sur');
+      });
+    },1000);
+
 </script>

@@ -1,6 +1,5 @@
 
 
-
 <div id="logo"><img src="<?php echo base_url()?>public/img/logo_radic.png" width="138" height="163" /></div>
 <!--Fin logo-->
 
@@ -280,3 +279,11 @@
 		
         });
 </script>
+
+
+<?php 
+// echo '<pre>';
+// print_r($aData);
+// print_r($aMoisture);
+// echo '</pre>';
+?>
