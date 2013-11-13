@@ -20,18 +20,6 @@ class Pcb_model extends CI_Model {
         return $query->result_array();
     }
 
-    public function get_trending_temperature($pcb_id)
-    {
-        $query = $this->db->query('SELECT pcb.id as pcb_id, sensors.id as sensor_id, sensors.identifier 
-                as sensor_identifier, temperature.value as t_value, temperature.created_at as created_at 
-                FROM (pcbs) LEFT JOIN sensors ON pcb.id = sensors.pcb_id 
-                JOIN temperature ON sensors.id = temperature.sensor_id WHERE pcb.id = '.$pcb_id.' 
-                and temperature.created_at >= NOW() - INTERVAL 3 DAY 
-                ORDER BY sensors.id asc, temperature.created_at asc'
-            );
-        return $query->result_array();
-        
-    }
 
     public function get_pcb_id_with_identifier($identifier)
     {
@@ -49,6 +37,19 @@ class Pcb_model extends CI_Model {
         ->from('pcbs')
         ->where('vineyard_id', $vineyard_id);
         return $this->db->get()->result_array();
+    }
+
+    public function exist_pcbid($iPcbId)
+    {
+        $query = $this->db->get_where('positions',array('pcb_id' => $iPcbId));
+        if ($query->num_rows() > 0)         
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
 }
