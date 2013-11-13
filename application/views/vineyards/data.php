@@ -309,12 +309,19 @@
       }).done(function(data){
         // console.log(data.pcb1.TM.value);
         $("#AM1").html(data.pcb1.AM.value);
+        $("#AM2").html(data.pcb2.AM.value);
         $("#LM1").html(data.pcb1.LM.value);
+        $("#LM2").html(data.pcb2.LM.value);
         $("#RG1").html(data.pcb1.RG.value + ' mm');
+        $("#RG2").html(data.pcb2.RG.value + ' mm');
         $("#SM001_1").html(data.pcb1.SM001.value);
+        $("#SM001_2").html(data.pcb2.SM001.value);
         $("#SM05_1").html(data.pcb1.SM05.value);
+        $("#SM05_2").html(data.pcb2.SM05.value);
         $("#TM1").html(data.pcb1.TM.value + ' °C');
+        $("#TM2").html(data.pcb2.TM.value + ' °C');
         $("#WG1").html(data.pcb1.WG.value + 'm/s Sur');
+        $("#WG2").html(data.pcb2.WG.value + 'm/s Sur');
       });
     },1000);
 
