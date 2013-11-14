@@ -16,7 +16,7 @@
 		    	<?php
 		    	 foreach ($aData['WG'] as $key => $data) { ?>
 		    	 	<td height="15" align="center" valign="bottom"><?=$key?></td>
-		    	 	<td align="center" valign="bottom">&nbsp;</td>	    	
+		    	 	<td align="center" valign="bottom">&nbsp;</td>
 		    	 	<?php 
 		    		}
 		    	?>
@@ -28,7 +28,7 @@
 	    <tr>
 	    	<?php
 	    	 foreach ($aData['WG'] as $data) { ?>
-	    	 	<td width="47%" align="center" valign="middle"><?=$data['value']?> m/s Sur</td> 	    	
+	    	 	<td width="47%" align="center" valign="middle" id="<?php echo $data['sensor_type'].$data['sensor_id']; ?>"><?=$data['value']?> m/s Sur</td> 	    	
 	    	 	<?php 
 	    		}
 	    	?>
@@ -65,7 +65,7 @@
 		<tr>
 			<?php
 		    	 foreach ($aData['TM'] as $key => $data) { ?>
-		    	 	<td width="46%" align="center" valign="middle"><?=$data['value']?>°C</td>    	
+		    	 	<td width="46%" align="center" valign="middle" id="<?php echo $data['sensor_type'].$data['sensor_id']; ?>"><?=$data['value']?>°C</td>    	
 		    	 	<?php 
 		    		}
 	    	?>
@@ -111,22 +111,22 @@
 	    		<tr>
 				    <td width="74%"> <span class="bold_humedad"><?=$aKey[0]?></span> - Humedad Ambiente</td>
 				    <td width="13%">HR%:</td>
-				    <td width="13%" class="bold_humedad"><?=$aMoisture[$aKey[0]]['AM']['value']?></td>
+				    <td width="13%" class="bold_humedad" id="<?php echo $aMoisture[$aKey[0]]['AM']['sensor_type'].$aMoisture[$aKey[0]]['AM']['sensor_id']; ?>"><?=$aMoisture[$aKey[0]]['AM']['value']?></td>
 		    	</tr>
 		    	<tr>
 				    <td><span class="bold_humedad"><?=$aKey[0]?></span> -  Humedad Sub-suelo (0,5 mts) </td>
 				    <td> Cbs:</td>
-				    <td class="bold_humedad"><?=$aMoisture[$aKey[0]]['SM05']['value']?></td>
+				    <td class="bold_humedad" id="<?php echo $aMoisture[$aKey[0]]['SM05']['sensor_type'].$aMoisture[$aKey[0]]['SM05']['sensor_id']; ?>"><?=$aMoisture[$aKey[0]]['SM05']['value']?></td>
 		    	</tr>
 		    	<tr>
 				    <td><span class="bold_humedad"><?=$aKey[0]?></span> -  Humedad Sub-suelo (0,01mts) </td>
 				    <td> Cbs:</td>
-				    <td class="bold_humedad"><?=$aMoisture[$aKey[0]]['SM001']['value']?></td>
+				    <td class="bold_humedad" id="<?php echo $aMoisture[$aKey[0]]['SM001']['sensor_type'].$aMoisture[$aKey[0]]['SM001']['sensor_id']; ?>"><?=$aMoisture[$aKey[0]]['SM001']['value']?></td>
 		    	</tr>
 		    	<tr>
 				    <td><span class="bold_humedad"><?=$aKey[0]?></span> -  Humectación en Hojas</td>
 				    <td>Cbs:</td>
-				    <td class="bold_humedad"><?=$aMoisture[$aKey[0]]['LM']['value']?></td>
+				    <td class="bold_humedad" id="<?php echo $aMoisture[$aKey[0]]['LM']['sensor_type'].$aMoisture[$aKey[0]]['LM']['sensor_id']; ?>"><?=$aMoisture[$aKey[0]]['LM']['value']?></td>
 		    	</tr>	    
 	    </table>
 
@@ -138,22 +138,22 @@
 		    <tr>
 			    <td width="74%"> <span class="bold_humedad"><?=$aKey[1]?></span> - Humedad Ambiente</td>
 			    <td width="13%">HR%:</td>
-			    <td width="13%" class="bold_humedad"><?=$aMoisture[$aKey[1]]['AM']['value']?></td>
+			    <td width="13%" class="bold_humedad" id="<?php echo $aMoisture[$aKey[1]]['AM']['sensor_type'].$aMoisture[$aKey[1]]['AM']['sensor_id']; ?>"><?=$aMoisture[$aKey[1]]['AM']['value']?></td>
 		    </tr>
 		    <tr>
 			    <td><span class="bold_humedad"><?=$aKey[1]?></span> -  Humedad Sub-suelo (0,5 mts) </td>
 			    <td> Cbs:</td>
-			    <td class="bold_humedad"><?=$aMoisture[$aKey[1]]['SM05']['value']?></td>
+			    <td class="bold_humedad" id="<?php echo $aMoisture[$aKey[1]]['SM05']['sensor_type'].$aMoisture[$aKey[1]]['SM05']['sensor_id']; ?>"><?=$aMoisture[$aKey[1]]['SM05']['value']?></td>
 		    </tr>
 		    <tr>
 			    <td><span class="bold_humedad"><?=$aKey[1]?></span> -  Humedad Sub-suelo (0,01mts) </td>
 			    <td> Cbs:</td>
-			    <td class="bold_humedad"><?=$aMoisture[$aKey[1]]['SM001']['value']?></td>
+			    <td class="bold_humedad" id="<?php echo $aMoisture[$aKey[1]]['SM001']['sensor_type'].$aMoisture[$aKey[1]]['SM001']['sensor_id']; ?>"><?=$aMoisture[$aKey[1]]['SM001']['value']?></td>
 		    </tr>
 		    <tr>
 			    <td><span class="bold_humedad"><?=$aKey[1]?></span> -  Humectación en Hojas</td>
 			    <td>Cbs:</td>
-			    <td class="bold_humedad"><?=$aMoisture[$aKey[1]]['LM']['value']?></td>
+			    <td class="bold_humedad" id="<?php echo $aMoisture[$aKey[1]]['LM']['sensor_type'].$aMoisture[$aKey[1]]['LM']['sensor_id']; ?>"><?=$aMoisture[$aKey[1]]['LM']['value']?></td>
 		    </tr>
 	    </table>
     </div>
@@ -187,7 +187,7 @@
 		<tr>
 			<?php
 		    	 foreach ($aData['RG'] as $key => $data) { ?>
-		    	 	<td width="52%" align="center" valign="middle"><?=$data['value']?>mm</td> 	
+		    	 	<td width="52%" align="center" valign="middle" id="<?php echo $data['sensor_type'].$data['sensor_id']; ?>"><?=$data['value']?>mm</td> 	
 		    	 	<?php 
 		    		}
 	    		?>
@@ -278,6 +278,36 @@
 		
 		
         });
+
+    setInterval(function(){
+      $.ajax({
+        url: "<?php echo base_url();?>vineyards/ajax_data_view/<?php echo $vineyard_name;?>",
+        dataType: 'json',
+        cache: false
+      }).done(function(data){
+        // console.log(data[0]['value']);
+        for (var i = 0; i < data.length; i++)
+        {
+        	if (data[i]['sensor_type'] == 'WG')
+        	{
+        		$("#"+data[i]['sensor_type']+data[i]['sensor_id']).html(data[i]['value']+' m/s Sur');
+        	}
+        	if (data[i]['sensor_type'] == 'RG')
+        	{
+        		$("#"+data[i]['sensor_type']+data[i]['sensor_id']).html(data[i]['value']+' mm');
+        	}
+        	if (data[i]['sensor_type'] == 'TM')
+        	{
+        		$("#"+data[i]['sensor_type']+data[i]['sensor_id']).html(data[i]['value']+' °C');
+        	}
+        	if (data[i]['sensor_type'] == 'AM' || data[i]['sensor_type'] == 'LM' || data[i]['sensor_type'] == 'SM001' || data[i]['sensor_type'] == 'SM05')
+        	{
+        		$("#"+data[i]['sensor_type']+data[i]['sensor_id']).html(data[i]['value']);
+        	}
+        }
+      });
+    },1000);
+
 </script>
 
 
