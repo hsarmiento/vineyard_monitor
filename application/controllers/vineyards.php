@@ -12,7 +12,7 @@ class Vineyards extends CI_Controller
 	public function index()
 	{
 
-		redirect('/vineyards/show/viña tu hermana');
+		redirect('/vineyards/show/viña');
 	}
 
 	public function show($vineyard_name)

@@ -19,7 +19,8 @@ $aKey = array_keys($aMoisture);
       <div id="bloque_right_l1">
   <!--inicio Humedad sensor A-->      
         <div id="humedad_sa">
-          <div class="titulos_mod_chicos_pre">Humedad <?=$aKey[0]?></div>
+          <div class="titulos_mod_chicos_pre">Humedad A</div>
+          <!-- <div class="titulos_mod_chicos_pre">Humedad <?=$aKey[0]?></div> -->
           <div class="info_mod_chicos_pre">
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
                 <tr>
@@ -58,7 +59,8 @@ $aKey = array_keys($aMoisture);
       
   <!--inicio Humedad sensor B-->     
       <div id="humedad_sb">
-          <div class="titulos_mod_chicos_pre">Humedad  <?=$aKey[1]?></div>
+        <div class="titulos_mod_chicos_pre">Humedad  B</div>
+          <!-- <div class="titulos_mod_chicos_pre">Humedad  <?=$aKey[1]?></div> -->
           <div class="info_mod_chicos_pre">   
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
               <tr>
@@ -132,6 +134,7 @@ $aKey = array_keys($aMoisture);
              <!--inicio modulo temperatura sensor a-->
               <div class="modulos_chicos_a">
                 <div class="titulos_mod_chicos">Temperatura A</div>
+                <!-- <div class="titulos_mod_chicos">Temperatura <?=$aKey[0]?></div> -->
                 <div class="info_mod_chicos" id="<?=$value['sensor_type'].$value['sensor_id']?>"><?=$value['value']?> °C</div>
                 <div class="link_mod_chicos">
                   <table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -149,6 +152,7 @@ $aKey = array_keys($aMoisture);
               <!--inicio modulo temperatura  sensor b-->      
               <div class="modulos_chicos_b">
                 <div class="titulos_mod_chicos">Temperatura B</div>
+                <!-- <div class="titulos_mod_chicos">Temperatura <?=$aKey[1]?></div> -->
                 <div class="info_mod_chicos" id="<?=$value['sensor_type'].$value['sensor_id']?>"><?=$value['value']?> °C</div>
                 <div class="link_mod_chicos">
                   <table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -175,6 +179,7 @@ $aKey = array_keys($aMoisture);
             <!--inicio modulo vel. viento sensor a-->          
             <div class="modulos_chicos_a">
               <div class="titulos_mod_chicos">Vel. Viento A</div>
+              <!-- <div class="titulos_mod_chicos">Vel. Viento <?=$aKey[0]?></div> -->
               <div class="info_mod_chicos_viento" id="<?=$value['sensor_type'].$value['sensor_id']?>"><?=$value['value']?>m/s Sur</div>
               <div class="link_mod_chicos">
                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -192,6 +197,7 @@ $aKey = array_keys($aMoisture);
             <!--inicio modulo vel. viento sensor b-->     
             <div class="modulos_chicos_b">
               <div class="titulos_mod_chicos">Vel. Viento B</div>
+              <!-- <div class="titulos_mod_chicos">Vel. Viento <?=$aKey[1]?></div> -->
               <div class="info_mod_chicos_viento" id="<?=$value['sensor_type'].$value['sensor_id']?>"><?=$value['value']?>m/s Sur</div>
               <div class="link_mod_chicos">
                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -218,6 +224,7 @@ $aKey = array_keys($aMoisture);
             <!--inicio modulo Precipitación sensor a-->       
               <div class="modulos_chicos_a">
                 <div class="titulos_mod_chicos">Precipitaciones A</div>
+                <!-- <div class="titulos_mod_chicos">Precipitaciones <?=$aKey[0]?></div> -->
                 <div class="info_mod_chicos_prec" id="<?=$value['sensor_type'].$value['sensor_id']?>"><?=$value['value']?> mm</div>
                 <div class="link_mod_chicos">
                   <table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -235,6 +242,7 @@ $aKey = array_keys($aMoisture);
           <!--inicio modulo Precipitación sensor b-->       
                 <div class="modulos_chicos_b">
                   <div class="titulos_mod_chicos">Precipitaciones B</div>
+                  <!-- <div class="titulos_mod_chicos">Precipitaciones <?=$aKey[1]?></div> -->
                   <div class="info_mod_chicos_prec" id="<?=$value['sensor_type'].$value['sensor_id']?>"><?=$value['value']?> mm</div>
                   <div class="link_mod_chicos">
                     <table width="100%" border="0" cellspacing="0" cellpadding="0">
