@@ -4,22 +4,24 @@ class Wind_gauge_model extends CI_Model {
 
 	var $iSensorId = 0;
 	var $iValue = 0;
+    var $sDirection = '';
 
     public function __construct()
     {
         parent::__construct();
     }
 
-    public function initialize($sensor_id, $value)
+    public function initialize($sensor_id, $value, $direction)
     {
         $this->iSensorId = $sensor_id;
         $this->iValue = $value;
+        $this->sDirection = $direction;
 
     }
 
     public function save_wind_value()
     {
-        $data = array('sensor_id' => $this->iSensorId ,'value'=>$this->iValue);
+        $data = array('sensor_id' => $this->iSensorId ,'value'=>$this->iValue, 'direction' => $this->sDirection, 'created_at' => date('Y-m-d H:i:s',(time())+(10800)));
         $this->db->insert('wind_gauge', $data);
         if($this->db->affected_rows() == '1')
         {

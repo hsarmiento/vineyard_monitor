@@ -19,7 +19,7 @@ class Subsoil_moisture_05_model extends CI_Model {
 
     public function save_subsoil_05_value()
     {
-        $data = array('sensor_id' => $this->iSensorId ,'value'=>$this->iValue);
+        $data = array('sensor_id' => $this->iSensorId ,'value'=>$this->iValue, 'created_at' => date('Y-m-d H:i:s',(time())+(10800)));
         $this->db->insert('subsoil_moisture_05', $data);
         if($this->db->affected_rows() == '1')
         {

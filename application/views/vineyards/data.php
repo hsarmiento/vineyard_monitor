@@ -29,12 +29,12 @@ $aKey = array_keys($aMoisture);
                   <td width="20%" class="tittle_lluvia_3" id="<?=$aMoisture[$aKey[0]]['AM']['sensor_type'].$aMoisture[$aKey[0]]['AM']['sensor_id']?>"><?=$aMoisture[$aKey[0]]['AM']['value']?></td>
                 </tr>
                 <tr>
-                  <td height="23" colspan="2" class="tittle_lluvia">H. Sub-suelo (0,5 mts)</td>
+                  <td height="23" colspan="2" class="tittle_lluvia">H. Sub-suelo (0,6 mts)</td>
                   <td class="tittle_lluvia_2">Cbs:</td>
                   <td class="tittle_lluvia_3" id="<?=$aMoisture[$aKey[0]]['SM05']['sensor_type'].$aMoisture[$aKey[0]]['SM05']['sensor_id']?>"><?=$aMoisture[$aKey[0]]['SM05']['value']?></td>
                 </tr>
                 <tr>
-                  <td height="23" colspan="2" class="tittle_lluvia">H. Sub-suelo (0,01mts) </td>
+                  <td height="23" colspan="2" class="tittle_lluvia">H. Sub-suelo (0,3mts) </td>
                   <td class="tittle_lluvia_2">Cbs:</td>
                   <td class="tittle_lluvia_3" id="<?=$aMoisture[$aKey[0]]['SM001']['sensor_type'].$aMoisture[$aKey[0]]['SM001']['sensor_id']?>"><?=$aMoisture[$aKey[0]]['SM001']['value']?></td>
                 </tr>
@@ -69,12 +69,12 @@ $aKey = array_keys($aMoisture);
                 <td width="20%" class="tittle_lluvia_3" id="<?=$aMoisture[$aKey[1]]['AM']['sensor_type'].$aMoisture[$aKey[1]]['AM']['sensor_id']?>"><?=$aMoisture[$aKey[1]]['AM']['value']?></td>
               </tr>
               <tr>
-                <td height="23" colspan="2" class="tittle_lluvia">H. Sub-suelo (0,5 mts)</td>
+                <td height="23" colspan="2" class="tittle_lluvia">H. Sub-suelo (0,6 mts)</td>
                 <td class="tittle_lluvia_2">Cbs:</td>
                 <td class="tittle_lluvia_3" id="<?=$aMoisture[$aKey[1]]['SM05']['sensor_type'].$aMoisture[$aKey[1]]['SM05']['sensor_id']?>"><?=$aMoisture[$aKey[1]]['SM05']['value']?></td>
               </tr>
               <tr>
-                <td height="23" colspan="2" class="tittle_lluvia">H. Sub-suelo (0,01mts) </td>
+                <td height="23" colspan="2" class="tittle_lluvia">H. Sub-suelo (0,3mts) </td>
                 <td class="tittle_lluvia_2">Cbs:</td>
                 <td class="tittle_lluvia_3" id="<?=$aMoisture[$aKey[1]]['SM001']['sensor_type'].$aMoisture[$aKey[1]]['SM001']['sensor_id']?>"><?=$aMoisture[$aKey[1]]['SM001']['value']?></td>
               </tr>
@@ -180,7 +180,7 @@ $aKey = array_keys($aMoisture);
             <div class="modulos_chicos_a">
               <div class="titulos_mod_chicos">Vel. Viento A</div>
               <!-- <div class="titulos_mod_chicos">Vel. Viento <?=$aKey[0]?></div> -->
-              <div class="info_mod_chicos_viento" id="<?=$value['sensor_type'].$value['sensor_id']?>"><?=$value['value']?>m/s Sur</div>
+              <div class="info_mod_chicos_viento" id="<?=$value['sensor_type'].$value['sensor_id']?>"><?=$value['value']?>km/h <?=$value['direction']?></div>
               <div class="link_mod_chicos">
                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
                   <tr>
@@ -198,7 +198,7 @@ $aKey = array_keys($aMoisture);
             <div class="modulos_chicos_b">
               <div class="titulos_mod_chicos">Vel. Viento B</div>
               <!-- <div class="titulos_mod_chicos">Vel. Viento <?=$aKey[1]?></div> -->
-              <div class="info_mod_chicos_viento" id="<?=$value['sensor_type'].$value['sensor_id']?>"><?=$value['value']?>m/s Sur</div>
+              <div class="info_mod_chicos_viento" id="<?=$value['sensor_type'].$value['sensor_id']?>"><?=$value['value']?>km/h <?=$value['direction']?></div>
               <div class="link_mod_chicos">
                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
                   <tr>
@@ -347,7 +347,7 @@ $aKey = array_keys($aMoisture);
         {
           if (data[i]['sensor_type'] == 'WG')
           {
-            $("#"+data[i]['sensor_type']+data[i]['sensor_id']).html(data[i]['value']+' m/s Sur');
+            $("#"+data[i]['sensor_type']+data[i]['sensor_id']).html(data[i]['value']+'km/h '+data[i]['direction']);
           }
           if (data[i]['sensor_type'] == 'RG')
           {

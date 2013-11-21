@@ -50,19 +50,19 @@ class Moisture extends CI_Controller {
 		$aSubsoil05Trending = $this->subsoil_moisture_05_model->get_subsoil05_trending($pcb_id);
 		// $aTrailerData = $this->trailer_model->get_trailer_data($trailer_id);
 		foreach ($aAmbientTrending as $trending) {
-				$aData['aAmbient'][] = "[".(mktime(date("H", strtotime($trending['created_at']))-4, date("i", strtotime($trending['created_at'])), date("s", strtotime($trending['created_at'])), date("m", strtotime($trending['created_at'])), date("d", strtotime($trending['created_at'])), date("Y", strtotime($trending['created_at'])))*1000).",".$trending['temp_value']."]";
+				$aData['aAmbient'][] = "[".(mktime(date("H", strtotime($trending['created_at']))-6, date("i", strtotime($trending['created_at'])), date("s", strtotime($trending['created_at'])), date("m", strtotime($trending['created_at'])), date("d", strtotime($trending['created_at'])), date("Y", strtotime($trending['created_at'])))*1000).",".$trending['temp_value']."]";
 				// $strIdentifier1 = $temp['sensor_identifier'];
 		}
 		foreach ($aLeavesTrending as $trending) {
-				$aData['aLeaves'][] = "[".(mktime(date("H", strtotime($trending['created_at']))-4, date("i", strtotime($trending['created_at'])), date("s", strtotime($trending['created_at'])), date("m", strtotime($trending['created_at'])), date("d", strtotime($trending['created_at'])), date("Y", strtotime($trending['created_at'])))*1000).",".$trending['temp_value']."]";
+				$aData['aLeaves'][] = "[".(mktime(date("H", strtotime($trending['created_at']))-6, date("i", strtotime($trending['created_at'])), date("s", strtotime($trending['created_at'])), date("m", strtotime($trending['created_at'])), date("d", strtotime($trending['created_at'])), date("Y", strtotime($trending['created_at'])))*1000).",".$trending['temp_value']."]";
 				// $strIdentifier1 = $temp['sensor_identifier'];
 		}
 		foreach ($aSubsoil001Trending as $trending) {
-				$aData['aSubsoil001'][] = "[".(mktime(date("H", strtotime($trending['created_at']))-4, date("i", strtotime($trending['created_at'])), date("s", strtotime($trending['created_at'])), date("m", strtotime($trending['created_at'])), date("d", strtotime($trending['created_at'])), date("Y", strtotime($trending['created_at'])))*1000).",".$trending['temp_value']."]";
+				$aData['aSubsoil001'][] = "[".(mktime(date("H", strtotime($trending['created_at']))-6, date("i", strtotime($trending['created_at'])), date("s", strtotime($trending['created_at'])), date("m", strtotime($trending['created_at'])), date("d", strtotime($trending['created_at'])), date("Y", strtotime($trending['created_at'])))*1000).",".$trending['temp_value']."]";
 				// $strIdentifier1 = $temp['sensor_identifier'];
 		}
 		foreach ($aSubsoil05Trending as $trending) {
-				$aData['aSubsoil05'][] = "[".(mktime(date("H", strtotime($trending['created_at']))-4, date("i", strtotime($trending['created_at'])), date("s", strtotime($trending['created_at'])), date("m", strtotime($trending['created_at'])), date("d", strtotime($trending['created_at'])), date("Y", strtotime($trending['created_at'])))*1000).",".$trending['temp_value']."]";
+				$aData['aSubsoil05'][] = "[".(mktime(date("H", strtotime($trending['created_at']))-6, date("i", strtotime($trending['created_at'])), date("s", strtotime($trending['created_at'])), date("m", strtotime($trending['created_at'])), date("d", strtotime($trending['created_at'])), date("Y", strtotime($trending['created_at'])))*1000).",".$trending['temp_value']."]";
 				// $strIdentifier1 = $temp['sensor_identifier'];
 		}
 		$aData['pcb_id'] = $pcb_id;	

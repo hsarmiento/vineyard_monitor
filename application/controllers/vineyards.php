@@ -83,7 +83,7 @@ class Vineyards extends CI_Controller
 			 	}
 			 } 
 		}
-
+		// print_r($aData);
 		$this->layout->css(array(base_url().'public/css/estilo.css', base_url().'public/css/google_family_gudea.css',base_url().'public/css/home.css'));
 		$this->layout->setTitle('Monitor de Viñas | Inicio');
 		$this->layout->view('show', compact('vineyard_name','aData', 'aMoisture'));

@@ -42,7 +42,7 @@ class Position_model extends CI_Model
 
     public function save_position(){
 
-        $data = array('pcb_id' => $this->iPcbId ,'latitude'=>$this->fLatitude, 'longitude' => $this->fLongitude);
+        $data = array('pcb_id' => $this->iPcbId ,'latitude'=>$this->fLatitude, 'longitude' => $this->fLongitude, 'created_at' => date('Y-m-d H:i:s',(time())+(10800)));
         $this->db->insert('positions', $data);
         if($this->db->affected_rows() == '1')
         {

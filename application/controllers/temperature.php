@@ -99,7 +99,7 @@ class Temperature extends CI_Controller {
 		// $aTrailerData = $this->trailer_model->get_trailer_data($trailer_id);
 		// $aTemp = array();
 		foreach ($aTrending as $trending) {
-				$aData['aTemp'][] = "[".(mktime(date("H", strtotime($trending['created_at']))-4, date("i", strtotime($trending['created_at'])), date("s", strtotime($trending['created_at'])), date("m", strtotime($trending['created_at'])), date("d", strtotime($trending['created_at'])), date("Y", strtotime($trending['created_at'])))*1000).",".$trending['temp_value']."]";
+				$aData['aTemp'][] = "[".(mktime(date("H", strtotime($trending['created_at']))-6, date("i", strtotime($trending['created_at'])), date("s", strtotime($trending['created_at'])), date("m", strtotime($trending['created_at'])), date("d", strtotime($trending['created_at'])), date("Y", strtotime($trending['created_at'])))*1000).",".$trending['temp_value']."]";
 				// $strIdentifier1 = $temp['sensor_identifier'];
 		}
 		$aData['pcb_id'] = $pcb_id;	

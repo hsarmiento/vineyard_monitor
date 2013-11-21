@@ -32,7 +32,7 @@ class Pcb extends CI_Controller
 		// i_TM = sensor identifier temperature
 		// i_WG = sensor identifier wind gauge
 
-		/* /pcb/get_data_gprs/i_PCB/i_AM/value_AM/i_LM/value_LM/i_RG/value_RG/i_SM001/value_SM001/i_SM05/value_SM05/i_TM/value_TM/i_WG/value_WG/lat/long/battery   */
+		/* /pcb/get_data_gprs/i_PCB/i_AM/value_AM/i_LM/value_LM/i_RG/value_RG/i_SM001/value_SM001/i_SM05/value_SM05/i_TM/value_TM/i_WG/value_WG/dir_WG/lat/long/battery   */
 		$sPcbIdent = $this->uri->segment(3,0);
 		$sAmbientMoisIden= $this->uri->segment(4,0);
 		$iAmbientMoisValue = $this->uri->segment(5,0);
@@ -48,9 +48,10 @@ class Pcb extends CI_Controller
 		$iTempValue = $this->uri->segment(15,0);
 		$sWindGaugeIden= $this->uri->segment(16,0);
 		$iWindGaugeValue = $this->uri->segment(17,0);
-		$fLatitude = $this->uri->segment(18,0);
-		$fLongitude = $this->uri->segment(19,0);
-		$iBattery = $this->uri->segment(20,0);
+		$sWindGaugeDir = $this->uri->segment(18,0);
+		$fLatitude = $this->uri->segment(19,0);
+		$fLongitude = $this->uri->segment(20,0);
+		$iBattery = $this->uri->segment(21,0);
 
 		$this->load->model('pcb_model');
 		$this->load->model('ambient_moisture_model');
@@ -93,7 +94,7 @@ class Pcb extends CI_Controller
 		$this->temperature_model->initialize($iSensorIdTemp,$iTempValue);
 		$this->temperature_model->save_temperature_value();
 
-		$this->wind_gauge_model->initialize($iSensorIdWind,$iWindGaugeValue);
+		$this->wind_gauge_model->initialize($iSensorIdWind,$iWindGaugeValue, $sWindGaugeDir);
 		$this->wind_gauge_model->save_wind_value();
 
 

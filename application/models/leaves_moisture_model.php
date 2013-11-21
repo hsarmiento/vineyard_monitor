@@ -19,7 +19,7 @@ class Leaves_moisture_model extends CI_Model {
 
     public function save_leaves_value()
     {
-        $data = array('sensor_id' => $this->iSensorId ,'value'=>$this->iValue);
+        $data = array('sensor_id' => $this->iSensorId ,'value'=>$this->iValue, 'created_at' => date('Y-m-d H:i:s',(time())+(10800)));
         $this->db->insert('leaves_moisture', $data);
         if($this->db->affected_rows() == '1')
         {
