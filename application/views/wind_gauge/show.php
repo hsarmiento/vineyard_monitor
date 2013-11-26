@@ -140,7 +140,7 @@
             yAxis: {
 
                 title: {
-                    text: 'Viento m/s'
+                    text: 'Viento km/h'
                 },
                 min: 0,
                 max: 200,
@@ -163,7 +163,7 @@
                 }
             },
             series: [{
-                name: 'Viento m/s',
+                name: 'Viento km/h',
                 data: [<?php echo implode($aWind, ",");?>]          
             }]
         });

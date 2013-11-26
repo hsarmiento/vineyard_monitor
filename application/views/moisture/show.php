@@ -168,10 +168,10 @@
                 name: 'Humedad Hoja [%]',
                 data: [<?php echo implode($aLeaves, ",");?>]
             },{
-                name: 'Humedad Subsuelo 0.5m [%]',
+                name: 'Humedad Subsuelo 0.6m [%]',
                 data: [<?php echo implode($aSubsoil05, ",");?>]
             },{
-                name: 'Humedad Subsuelo 0.01m [%]',
+                name: 'Humedad Subsuelo 0.3m [%]',
                 data: [<?php echo implode($aSubsoil001, ",");?>]
             }]
         });
