@@ -25,22 +25,22 @@ $aKey = array_keys($aMoisture);
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
                 <tr>
                   <td height="23" colspan="2" class="tittle_lluvia">H.  Ambiente</td>
-                  <td width="15%" class="tittle_lluvia_2">Hr%:</td>
+                  <td width="15%" class="tittle_lluvia_2">H%:</td>
                   <td width="20%" class="tittle_lluvia_3" id="<?=$aMoisture[$aKey[0]]['AM']['sensor_type'].$aMoisture[$aKey[0]]['AM']['sensor_id']?>"><?=$aMoisture[$aKey[0]]['AM']['value']?></td>
                 </tr>
                 <tr>
                   <td height="23" colspan="2" class="tittle_lluvia">H. Sub-suelo (0,6 mts)</td>
-                  <td class="tittle_lluvia_2">Cbs:</td>
+                  <td class="tittle_lluvia_2">H%:</td>
                   <td class="tittle_lluvia_3" id="<?=$aMoisture[$aKey[0]]['SM05']['sensor_type'].$aMoisture[$aKey[0]]['SM05']['sensor_id']?>"><?=$aMoisture[$aKey[0]]['SM05']['value']?></td>
                 </tr>
                 <tr>
                   <td height="23" colspan="2" class="tittle_lluvia">H. Sub-suelo (0,3mts) </td>
-                  <td class="tittle_lluvia_2">Cbs:</td>
+                  <td class="tittle_lluvia_2">H%:</td>
                   <td class="tittle_lluvia_3" id="<?=$aMoisture[$aKey[0]]['SM001']['sensor_type'].$aMoisture[$aKey[0]]['SM001']['sensor_id']?>"><?=$aMoisture[$aKey[0]]['SM001']['value']?></td>
                 </tr>
                 <tr>
                   <td height="23" colspan="2" class="tittle_lluvia">Humect. en Hojas</td>
-                  <td class="tittle_lluvia_2">Cbs:</td>
+                  <td class="tittle_lluvia_2">H%:</td>
                   <td class="tittle_lluvia_3" id="<?=$aMoisture[$aKey[0]]['LM']['sensor_type'].$aMoisture[$aKey[0]]['LM']['sensor_id']?>"><?=$aMoisture[$aKey[0]]['LM']['value']?></td>
                 </tr>
             </table>
@@ -65,22 +65,22 @@ $aKey = array_keys($aMoisture);
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
               <tr>
                 <td height="23" colspan="2" class="tittle_lluvia">H.  Ambiente</td>
-                <td width="15%" class="tittle_lluvia_2">Hr%:</td>
+                <td width="15%" class="tittle_lluvia_2">H%:</td>
                 <td width="20%" class="tittle_lluvia_3" id="<?=$aMoisture[$aKey[1]]['AM']['sensor_type'].$aMoisture[$aKey[1]]['AM']['sensor_id']?>"><?=$aMoisture[$aKey[1]]['AM']['value']?></td>
               </tr>
               <tr>
                 <td height="23" colspan="2" class="tittle_lluvia">H. Sub-suelo (0,6 mts)</td>
-                <td class="tittle_lluvia_2">Cbs:</td>
+                <td class="tittle_lluvia_2">H%:</td>
                 <td class="tittle_lluvia_3" id="<?=$aMoisture[$aKey[1]]['SM05']['sensor_type'].$aMoisture[$aKey[1]]['SM05']['sensor_id']?>"><?=$aMoisture[$aKey[1]]['SM05']['value']?></td>
               </tr>
               <tr>
                 <td height="23" colspan="2" class="tittle_lluvia">H. Sub-suelo (0,3mts) </td>
-                <td class="tittle_lluvia_2">Cbs:</td>
+                <td class="tittle_lluvia_2">H%:</td>
                 <td class="tittle_lluvia_3" id="<?=$aMoisture[$aKey[1]]['SM001']['sensor_type'].$aMoisture[$aKey[1]]['SM001']['sensor_id']?>"><?=$aMoisture[$aKey[1]]['SM001']['value']?></td>
               </tr>
               <tr>
                 <td height="23" colspan="2" class="tittle_lluvia">Humect. en Hojas</td>
-                <td class="tittle_lluvia_2">Cbs:</td>
+                <td class="tittle_lluvia_2">H%:</td>
                 <td class="tittle_lluvia_3" id="<?=$aMoisture[$aKey[1]]['LM']['sensor_type'].$aMoisture[$aKey[1]]['LM']['sensor_id']?>"><?=$aMoisture[$aKey[1]]['LM']['value']?></td>
               </tr>
             </table>          

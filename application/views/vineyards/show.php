@@ -111,25 +111,25 @@
 	    		<tr>
 	    			<td width="74%"> <span class="bold_humedad">A</span> - Humedad Ambiente</td>
 				    <!-- <td width="74%"> <span class="bold_humedad"><?=$aKey[0]?></span> - Humedad Ambiente</td> -->
-				    <td width="13%">HR%:</td>
+				    <td width="13%">H%:</td>
 				    <td width="13%" class="bold_humedad" id="<?php echo $aMoisture[$aKey[0]]['AM']['sensor_type'].$aMoisture[$aKey[0]]['AM']['sensor_id']; ?>"><?=$aMoisture[$aKey[0]]['AM']['value']?></td>
 		    	</tr>
 		    	<tr>
 		    		<td><span class="bold_humedad">A</span> -  Humedad Sub-suelo (0,6 mts) </td>
 				    <!-- <td><span class="bold_humedad"><?=$aKey[0]?></span> -  Humedad Sub-suelo (0,5 mts) </td> -->
-				    <td> Cbs:</td>
+				    <td>H%:</td>
 				    <td class="bold_humedad" id="<?php echo $aMoisture[$aKey[0]]['SM05']['sensor_type'].$aMoisture[$aKey[0]]['SM05']['sensor_id']; ?>"><?=$aMoisture[$aKey[0]]['SM05']['value']?></td>
 		    	</tr>
 		    	<tr>
 		    		<td><span class="bold_humedad">A</span> -  Humedad Sub-suelo (0,3mts) </td>
 				    <!-- <td><span class="bold_humedad"><?=$aKey[0]?></span> -  Humedad Sub-suelo (0,01mts) </td> -->
-				    <td> Cbs:</td>
+				    <td>H%:</td>
 				    <td class="bold_humedad" id="<?php echo $aMoisture[$aKey[0]]['SM001']['sensor_type'].$aMoisture[$aKey[0]]['SM001']['sensor_id']; ?>"><?=$aMoisture[$aKey[0]]['SM001']['value']?></td>
 		    	</tr>
 		    	<tr>
 		    		<td><span class="bold_humedad">A</span> -  Humectación en Hojas</td>
 				    <!-- <td><span class="bold_humedad"><?=$aKey[0]?></span> -  Humectación en Hojas</td> -->
-				    <td>Cbs:</td>
+				    <td>H%</td>
 				    <td class="bold_humedad" id="<?php echo $aMoisture[$aKey[0]]['LM']['sensor_type'].$aMoisture[$aKey[0]]['LM']['sensor_id']; ?>"><?=$aMoisture[$aKey[0]]['LM']['value']?></td>
 		    	</tr>	    
 	    </table>
@@ -142,25 +142,25 @@
 		    <tr>
 		    	<!-- <td width="74%"> <span class="bold_humedad">B</span> - Humedad Ambiente</td> -->
 			    <td width="74%"> <span class="bold_humedad"><?=$aKey[1]?></span> - Humedad Ambiente</td>
-			    <td width="13%">HR%:</td>
+			    <td width="13%">H%</td>
 			    <td width="13%" class="bold_humedad" id="<?php echo $aMoisture[$aKey[1]]['AM']['sensor_type'].$aMoisture[$aKey[1]]['AM']['sensor_id']; ?>"><?=$aMoisture[$aKey[1]]['AM']['value']?></td>
 		    </tr>
 		    <tr>
 		    	<!-- <td><span class="bold_humedad">B</span> -  Humedad Sub-suelo (0,6 mts) </td> -->
 			    <td><span class="bold_humedad"><?=$aKey[1]?></span> -  Humedad Sub-suelo (0,6 mts) </td> 
-			    <td> Cbs:</td>
+			    <td>H%</td>
 			    <td class="bold_humedad" id="<?php echo $aMoisture[$aKey[1]]['SM05']['sensor_type'].$aMoisture[$aKey[1]]['SM05']['sensor_id']; ?>"><?=$aMoisture[$aKey[1]]['SM05']['value']?></td>
 		    </tr>
 		    <tr>
 		    	<!-- <td><span class="bold_humedad">B</span> -  Humedad Sub-suelo (0,3mts) </td> -->
 			    <td><span class="bold_humedad"><?=$aKey[1]?></span> -  Humedad Sub-suelo (0,3mts) </td> 
-			    <td> Cbs:</td>
+			    <td>H%</td>
 			    <td class="bold_humedad" id="<?php echo $aMoisture[$aKey[1]]['SM001']['sensor_type'].$aMoisture[$aKey[1]]['SM001']['sensor_id']; ?>"><?=$aMoisture[$aKey[1]]['SM001']['value']?></td>
 		    </tr>
 		    <tr>
 		    	<!-- <td><span class="bold_humedad">B</span> -  Humectación en Hojas</td> -->
 			    <td><span class="bold_humedad"><?=$aKey[1]?></span> -  Humectación en Hojas</td>
-			    <td>Cbs:</td>
+			    <td>H%</td>
 			    <td class="bold_humedad" id="<?php echo $aMoisture[$aKey[1]]['LM']['sensor_type'].$aMoisture[$aKey[1]]['LM']['sensor_id']; ?>"><?=$aMoisture[$aKey[1]]['LM']['value']?></td>
 		    </tr>
 	    </table>
