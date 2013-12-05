@@ -38,13 +38,13 @@ class Leaves_moisture_model extends CI_Model {
         return $this->db->get()->row_array();
     }
 
-    public function get_leaves_trending($pcb_id)
+    public function get_leaves_trending($pcb_id, $day)
     {
         $query = $this->db->query("SELECT t1.identifier as pcb_identifier, t1.id as pcb_id, 
                 t2.id sensor_id, t2.identifier sensor_identifier, t2.type as sensor_type, 
                 t3.value as temp_value, t3.created_at as created_at
                 from pcbs as t1 left join sensors as t2 on t1.id = t2.pcb_id left join leaves_moisture
-                as t3 on t2.id = t3.sensor_id where t1.id = ".$pcb_id." and t2.type = 'LM' and t3.created_at >= NOW() - INTERVAL 3 DAY 
+                as t3 on t2.id = t3.sensor_id where t1.id = ".$pcb_id." and t2.type = 'LM' and t3.created_at >= NOW() - INTERVAL ".$day." DAY 
                 ORDER BY t2.id asc, t3.created_at asc;"
             );
         return $query->result_array();

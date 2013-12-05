@@ -30,7 +30,7 @@ class Rain_gauge extends CI_Controller {
 		$this->layout->view('index');
 	}
 
-	public function show($vineyard_name, $pcb_id)
+	public function show($vineyard_name, $pcb_id, $day)
 	{
 		$this->load->model('pcb_model');
 		$this->load->model('Position_model');
@@ -41,14 +41,17 @@ class Rain_gauge extends CI_Controller {
 		}
 
 		$aData['aPosition'] = $this->Position_model->get_last_position($pcb_id);
-		$aTrending = $this->rain_gauge_model->get_rain_trending($pcb_id);
+		$aTrending = $this->rain_gauge_model->get_rain_trending($pcb_id, $day);
+		$aPcb = $this->pcb_model->get_pcb_with_id($pcb_id);
 		// $aTrailerData = $this->trailer_model->get_trailer_data($trailer_id);
 		foreach ($aTrending as $trending) {
 				$aData['aRain'][] = "[".(mktime(date("H", strtotime($trending['created_at']))-6, date("i", strtotime($trending['created_at'])), date("s", strtotime($trending['created_at'])), date("m", strtotime($trending['created_at'])), date("d", strtotime($trending['created_at'])), date("Y", strtotime($trending['created_at'])))*1000).",".$trending['temp_value']."]";
 				// $strIdentifier1 = $temp['sensor_identifier'];
 		}
+		$aData['pcb_identifier'] = $aPcb['identifier'];
 		$aData['pcb_id'] = $pcb_id;	
 		$aData['vineyard_name'] = $vineyard_name;	
+		$aData['days'] = $day;
 		$this->layout->setTitle('Monitor de Viñas | Precipitaciones');
 		$this->layout->css(array(base_url().'public/css/precipitacion.css'));
 		$this->layout->view('show', $aData);

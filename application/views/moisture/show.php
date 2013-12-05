@@ -1,3 +1,12 @@
+<?php
+if($days == 1){
+    $text_day = "último día";
+}else{
+    $text_day = "últimos ".$days." días";
+}
+
+?>
+
 <!--logo-->
     <div id="logo"><img src="<?php echo base_url()?>public/img/logo_radic.png" width="138" height="163" /></div>
 <!--Fin logo-->
@@ -28,16 +37,16 @@
     <div id="central_menu">
         <div class="boxs_menu_temperatura"></div><!--Ignorra No borrar-->
         <div class="boxs_menu_temperatura"></div><!--Ignorra No borrar-->
-        <div class="boxs_menu_temperatura"><a href="<?php echo base_url()?>temperature/show/<?=$vineyard_name?>/<?=$pcb_id?>" title="Temperatura">ir</a></div>
+        <div class="boxs_menu_temperatura"><a href="<?php echo base_url()?>temperature/show/<?=$vineyard_name?>/<?=$pcb_id?>/3" title="Temperatura">ir</a></div>
         <div class="boxs_menu_humedad"><a href="#" title="Humedad">ir</a></div>
-        <div class="boxs_menu_viento"><a href="<?php echo base_url()?>wind_gauge/show/<?=$vineyard_name?>/<?=$pcb_id?>" title="Viento">ir</a></div>
-        <div class="boxs_menu_precipitacion"><a href="<?php echo base_url()?>rain_gauge/show/<?=$vineyard_name?>/<?=$pcb_id?>" title="Precipitaciones">ir</a></div>
+        <div class="boxs_menu_viento"><a href="<?php echo base_url()?>wind_gauge/show/<?=$vineyard_name?>/<?=$pcb_id?>/3" title="Viento">ir</a></div>
+        <div class="boxs_menu_precipitacion"><a href="<?php echo base_url()?>rain_gauge/show/<?=$vineyard_name?>/<?=$pcb_id?>/3" title="Precipitaciones">ir</a></div>
         <!--Fin menu central-->  
     </div>
     <div id="central_gps">
     
 <!--inicio titulo gps -->   
-    <div id="titulo_gps">Humedad | GPS A - B</div>
+    <div id="titulo_gps">Humedad | GPS <?=$pcb_identifier?></div>
 <!--fin titulo gps -->   
 
      
@@ -120,7 +129,7 @@
                 x: -20 //center
             },
             subtitle: {
-                text: 'últimas 72 horas',
+                text: '<?=$text_day?>',
                 x: -20
             },
             exporting: {
@@ -142,7 +151,7 @@
                     text: 'Humedad %'
                 },
                 min: 0,
-                max: 200,
+                max: 110,
                 plotLines: [{
                     value: 0,
                     width: 1,

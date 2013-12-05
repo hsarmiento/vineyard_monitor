@@ -18,10 +18,10 @@
 		    <tr>
 		    	<td height="15" align="center" valign="bottom">Sensor A</td>
 	    	 	<td align="center" valign="bottom">&nbsp;</td>
-	    	 	<td height="15" align="center" valign="bottom">Sensor B</td>
+	    	 	<!-- <td height="15" align="center" valign="bottom">Sensor B</td> -->
 	    	 	<!-- <td height="15" align="center" valign="bottom"><?=$aKey[0]?></td>
-	    	 	<td align="center" valign="bottom">&nbsp;</td>
-	    	 	<td height="15" align="center" valign="bottom"><?=$aKey[1]?></td> -->
+	    	 	<td align="center" valign="bottom">&nbsp;</td> -->
+	    	 	<td height="15" align="center" valign="bottom"><?=$aKey[1]?></td>
 		    </tr>
 	    </table>
 	</div>
@@ -54,10 +54,10 @@
 			<tr>
 				<td height="15" align="center" valign="bottom">Sensor A</td>
 	    	 	<td align="center" valign="bottom">&nbsp;</td>
-	    	 	<td height="15" align="center" valign="bottom">Sensor B</td>
+	    	 	<!-- <td height="15" align="center" valign="bottom">Sensor B</td> -->
 	    	 	<!-- <td height="15" align="center" valign="bottom"><?=$aKey[0]?></td>
-	    	 	<td align="center" valign="bottom">&nbsp;</td>
-	    	 	<td height="15" align="center" valign="bottom"><?=$aKey[1]?></td> -->
+	    	 	<td align="center" valign="bottom">&nbsp;</td> -->
+	    	 	<td height="15" align="center" valign="bottom"><?=$aKey[1]?></td>
 	    	 		    	
 			</tr>
 		</table>
@@ -94,9 +94,9 @@
 					    <table width="55" border="0" cellspacing="4" cellpadding="2">
 					    <tr>   
 					    	<td align="center" valign="middle" bgcolor="#666666" class="link_a"><a href="#">A</a></td>
-						    <td align="center" valign="middle" bgcolor="#666666" class="link_b"><a href="#">B</a></td>	
-						    <!-- <td align="center" valign="middle" bgcolor="#666666" class="link_a"><a href="#"><?=$aKey[0]?></a></td>
-						    <td align="center" valign="middle" bgcolor="#666666" class="link_b"><a href="#"><?=$aKey[1]?></a></td> -->
+						    <!-- <td align="center" valign="middle" bgcolor="#666666" class="link_b"><a href="#">B</a></td>	 -->
+						    <!-- <td align="center" valign="middle" bgcolor="#666666" class="link_a"><a href="#"><?=$aKey[0]?></a></td> -->
+						    <td align="center" valign="middle" bgcolor="#666666" class="link_b"><a href="#"><?=$aKey[1]?></a></td>
 					    </tr>
 					    </table>
 			    	</div>
@@ -140,26 +140,26 @@
     <div id="b_humedad">
       	<table width="100%" border="0" cellspacing="0" cellpadding="0">
 		    <tr>
-		    	<td width="74%"> <span class="bold_humedad">B</span> - Humedad Ambiente</td>
-			    <!-- <td width="74%"> <span class="bold_humedad"><?=$aKey[1]?></span> - Humedad Ambiente</td> -->
+		    	<!-- <td width="74%"> <span class="bold_humedad">B</span> - Humedad Ambiente</td> -->
+			    <td width="74%"> <span class="bold_humedad"><?=$aKey[1]?></span> - Humedad Ambiente</td>
 			    <td width="13%">HR%:</td>
 			    <td width="13%" class="bold_humedad" id="<?php echo $aMoisture[$aKey[1]]['AM']['sensor_type'].$aMoisture[$aKey[1]]['AM']['sensor_id']; ?>"><?=$aMoisture[$aKey[1]]['AM']['value']?></td>
 		    </tr>
 		    <tr>
-		    	<td><span class="bold_humedad">B</span> -  Humedad Sub-suelo (0,6 mts) </td>
-			    <!-- <td><span class="bold_humedad"><?=$aKey[1]?></span> -  Humedad Sub-suelo (0,5 mts) </td> -->
+		    	<!-- <td><span class="bold_humedad">B</span> -  Humedad Sub-suelo (0,6 mts) </td> -->
+			    <td><span class="bold_humedad"><?=$aKey[1]?></span> -  Humedad Sub-suelo (0,6 mts) </td> 
 			    <td> Cbs:</td>
 			    <td class="bold_humedad" id="<?php echo $aMoisture[$aKey[1]]['SM05']['sensor_type'].$aMoisture[$aKey[1]]['SM05']['sensor_id']; ?>"><?=$aMoisture[$aKey[1]]['SM05']['value']?></td>
 		    </tr>
 		    <tr>
-		    	<td><span class="bold_humedad">B</span> -  Humedad Sub-suelo (0,3mts) </td>
-			    <!-- <td><span class="bold_humedad"><?=$aKey[1]?></span> -  Humedad Sub-suelo (0,01mts) </td> -->
+		    	<!-- <td><span class="bold_humedad">B</span> -  Humedad Sub-suelo (0,3mts) </td> -->
+			    <td><span class="bold_humedad"><?=$aKey[1]?></span> -  Humedad Sub-suelo (0,3mts) </td> 
 			    <td> Cbs:</td>
 			    <td class="bold_humedad" id="<?php echo $aMoisture[$aKey[1]]['SM001']['sensor_type'].$aMoisture[$aKey[1]]['SM001']['sensor_id']; ?>"><?=$aMoisture[$aKey[1]]['SM001']['value']?></td>
 		    </tr>
 		    <tr>
-		    	<td><span class="bold_humedad">B</span> -  Humectación en Hojas</td>
-			    <!-- <td><span class="bold_humedad"><?=$aKey[1]?></span> -  Humectación en Hojas</td> -->
+		    	<!-- <td><span class="bold_humedad">B</span> -  Humectación en Hojas</td> -->
+			    <td><span class="bold_humedad"><?=$aKey[1]?></span> -  Humectación en Hojas</td>
 			    <td>Cbs:</td>
 			    <td class="bold_humedad" id="<?php echo $aMoisture[$aKey[1]]['LM']['sensor_type'].$aMoisture[$aKey[1]]['LM']['sensor_id']; ?>"><?=$aMoisture[$aKey[1]]['LM']['value']?></td>
 		    </tr>
@@ -183,10 +183,10 @@
 			<tr>
 				<td align="center" valign="bottom">Sensor A</td>
 	    	 	<td align="center" valign="bottom">&nbsp;</td> 
-	    	 	<td align="center" valign="bottom">Sensor B</td>
+	    	 	<!-- <td align="center" valign="bottom">Sensor B</td> -->
 	    	 	<!-- <td align="center" valign="bottom"><?=$aKey[0]?></td>
-	    	 	<td align="center" valign="bottom">&nbsp;</td> 
-	    	 	<td align="center" valign="bottom"><?=$aKey[1]?></td> -->
+	    	 	<td align="center" valign="bottom">&nbsp;</td>  -->
+	    	 	<td align="center" valign="bottom"><?=$aKey[1]?></td>
 	    	 		
 			</tr>
 		</table>

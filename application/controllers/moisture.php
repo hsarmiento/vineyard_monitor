@@ -33,7 +33,7 @@ class Moisture extends CI_Controller {
 		$this->layout->view('index');
 	}
 
-	public function show($vineyard_name, $pcb_id)
+	public function show($vineyard_name, $pcb_id, $day)
 	{
 		$this->load->model('pcb_model');
 		$this->load->model('Position_model');
@@ -44,10 +44,11 @@ class Moisture extends CI_Controller {
 		}
 
 		$aData['aPosition'] = $this->Position_model->get_last_position($pcb_id);
-		$aAmbientTrending = $this->ambient_moisture_model->get_ambient_trending($pcb_id);
-		$aLeavesTrending = $this->leaves_moisture_model->get_leaves_trending($pcb_id);
-		$aSubsoil001Trending = $this->subsoil_moisture_001_model->get_subsoil001_trending($pcb_id);
-		$aSubsoil05Trending = $this->subsoil_moisture_05_model->get_subsoil05_trending($pcb_id);
+		$aAmbientTrending = $this->ambient_moisture_model->get_ambient_trending($pcb_id,$day);
+		$aLeavesTrending = $this->leaves_moisture_model->get_leaves_trending($pcb_id, $day);
+		$aSubsoil001Trending = $this->subsoil_moisture_001_model->get_subsoil001_trending($pcb_id, $day);
+		$aSubsoil05Trending = $this->subsoil_moisture_05_model->get_subsoil05_trending($pcb_id, $day);
+		$aPcb = $this->pcb_model->get_pcb_with_id($pcb_id);
 		// $aTrailerData = $this->trailer_model->get_trailer_data($trailer_id);
 		foreach ($aAmbientTrending as $trending) {
 				$aData['aAmbient'][] = "[".(mktime(date("H", strtotime($trending['created_at']))-6, date("i", strtotime($trending['created_at'])), date("s", strtotime($trending['created_at'])), date("m", strtotime($trending['created_at'])), date("d", strtotime($trending['created_at'])), date("Y", strtotime($trending['created_at'])))*1000).",".$trending['temp_value']."]";
@@ -65,8 +66,10 @@ class Moisture extends CI_Controller {
 				$aData['aSubsoil05'][] = "[".(mktime(date("H", strtotime($trending['created_at']))-6, date("i", strtotime($trending['created_at'])), date("s", strtotime($trending['created_at'])), date("m", strtotime($trending['created_at'])), date("d", strtotime($trending['created_at'])), date("Y", strtotime($trending['created_at'])))*1000).",".$trending['temp_value']."]";
 				// $strIdentifier1 = $temp['sensor_identifier'];
 		}
+		$aData['pcb_identifier'] = $aPcb['identifier'];
 		$aData['pcb_id'] = $pcb_id;	
 		$aData['vineyard_name'] = $vineyard_name;	
+		$aData['days'] = $day;
 		$this->layout->setTitle('Monitor de Viñas | Humedad');
 		$this->layout->css(array(base_url().'public/css/humedad.css'));
 		$this->layout->view('show', $aData);

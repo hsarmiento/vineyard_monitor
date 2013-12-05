@@ -1,3 +1,12 @@
+<?php
+if($days == 1){
+	$text_day = "último día";
+}else{
+	$text_day = "últimos ".$days." días";
+}
+
+?>
+
 
 <!-- <div id="embedl_gps"></div> -->
 
@@ -31,16 +40,16 @@
 			<div class="boxs_menu_temperatura"></div><!--Ignorra No borrar-->
 			<div class="boxs_menu_temperatura"></div><!--Ignorra No borrar-->
 			<div class="boxs_menu_temperatura"><a href="#" title="Temperatura">ir</a></div>
-			<div class="boxs_menu_humedad"><a href="<?php echo base_url()?>moisture/show/<?=$vineyard_name?>/<?=$pcb_id?>" title="Humedad">ir</a></div>
-			<div class="boxs_menu_viento"><a href="<?php echo base_url()?>wind_gauge/show/<?=$vineyard_name?>/<?=$pcb_id?>" title="Viento">ir</a></div>
-			<div class="boxs_menu_precipitacion"><a href="<?php echo base_url()?>rain_gauge/show/<?=$vineyard_name?>/<?=$pcb_id?>" title="Precipitaciones">ir</a></div>
+			<div class="boxs_menu_humedad"><a href="<?php echo base_url()?>moisture/show/<?=$vineyard_name?>/<?=$pcb_id?>/3" title="Humedad">ir</a></div>
+			<div class="boxs_menu_viento"><a href="<?php echo base_url()?>wind_gauge/show/<?=$vineyard_name?>/<?=$pcb_id?>/3" title="Viento">ir</a></div>
+			<div class="boxs_menu_precipitacion"><a href="<?php echo base_url()?>rain_gauge/show/<?=$vineyard_name?>/<?=$pcb_id?>/3" title="Precipitaciones">ir</a></div>
 			<!--Fin menu central-->  
 		</div>
 		
 		<div id="central_gps">
 
 			<!--inicio titulo gps -->   
-			<div id="titulo_gps">Temperatura | GPS A - B</div>
+			<div id="titulo_gps">Temperatura | GPS <?=$pcb_identifier?></div>
 			<!--fin titulo gps -->   
  
 			<!--inicio mapa gps -->        
@@ -123,7 +132,7 @@
                 x: -20 //center
             },
             subtitle: {
-                text: 'últimas 72 horas',
+                text: '<?=$text_day?>',
                 x: -20
             },
             exporting: {
@@ -145,7 +154,7 @@
                     text: 'Temperatura °C'
                 },
                 min: 0,
-                max: 200,
+                max: 110,
                 plotLines: [{
                     value: 0,
                     width: 1,

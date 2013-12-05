@@ -49,7 +49,7 @@ $aKey = array_keys($aMoisture);
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
               <tr>
                 <td width="15%">&nbsp;</td>
-                <td width="68%" align="center" valign="middle" class="link_graficogps_temp"><a href="<?php echo base_url()?>moisture/show/<?=$sVineyardName;?>/<?=$aMoisture[$aKey[0]]['LM']['pcb_id']?>">Gráfico/GPS</a></td>
+                <td width="68%" align="center" valign="middle" class="link_graficogps_temp"><a href="<?php echo base_url()?>moisture/show/<?=$sVineyardName;?>/<?=$aMoisture[$aKey[0]]['LM']['pcb_id']?>/3">Gráfico/GPS</a></td>
                 <td width="17%" class="link_graficogps_temp">&nbsp;</td>
               </tr>
             </table>
@@ -59,8 +59,8 @@ $aKey = array_keys($aMoisture);
       
   <!--inicio Humedad sensor B-->     
       <div id="humedad_sb">
-        <div class="titulos_mod_chicos_pre">Humedad  B</div>
-          <!-- <div class="titulos_mod_chicos_pre">Humedad  <?=$aKey[1]?></div> -->
+        <!-- <div class="titulos_mod_chicos_pre">Humedad  B</div> -->
+          <div class="titulos_mod_chicos_pre">Humedad  <?=$aKey[1]?></div>
           <div class="info_mod_chicos_pre">   
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
               <tr>
@@ -89,7 +89,7 @@ $aKey = array_keys($aMoisture);
           <table width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr>
               <td width="15%">&nbsp;</td>
-              <td width="68%" align="center" valign="middle" class="link_graficogps_temp"><a href="<?php echo base_url()?>moisture/show/<?=$sVineyardName;?>/<?=$aMoisture[$aKey[1]]['LM']['pcb_id']?>">Gráfico/GPS</a></td>
+              <td width="68%" align="center" valign="middle" class="link_graficogps_temp"><a href="<?php echo base_url()?>moisture/show/<?=$sVineyardName;?>/<?=$aMoisture[$aKey[1]]['LM']['pcb_id']?>/3">Gráfico/GPS</a></td>
               <td width="17%" class="link_graficogps_temp">&nbsp;</td>
             </tr>
             </table>
@@ -140,7 +140,7 @@ $aKey = array_keys($aMoisture);
                   <table width="100%" border="0" cellspacing="0" cellpadding="0">
                     <tr>
                       <td width="15%">&nbsp;</td>
-                      <td width="68%" align="center" valign="middle" class="link_graficogps_temp"><a href="<?php echo base_url()?>temperature/show/<?=$sVineyardName;?>/<?=$value['pcb_id']?>">Gráfico/GPS</a></td>
+                      <td width="68%" align="center" valign="middle" class="link_graficogps_temp"><a href="<?php echo base_url()?>temperature/show/<?=$sVineyardName;?>/<?=$value['pcb_id']?>/3">Gráfico/GPS</a></td>
                       <td width="17%" class="link_graficogps_temp">&nbsp;</td>
                     </tr>
                   </table>
@@ -151,14 +151,14 @@ $aKey = array_keys($aMoisture);
            }else{ ?>
               <!--inicio modulo temperatura  sensor b-->      
               <div class="modulos_chicos_b">
-                <div class="titulos_mod_chicos">Temperatura B</div>
-                <!-- <div class="titulos_mod_chicos">Temperatura <?=$aKey[1]?></div> -->
+                <!-- <div class="titulos_mod_chicos">Temperatura B</div> -->
+                <div class="titulos_mod_chicos">Temperatura <?=$aKey[1]?></div>
                 <div class="info_mod_chicos" id="<?=$value['sensor_type'].$value['sensor_id']?>"><?=$value['value']?> °C</div>
                 <div class="link_mod_chicos">
                   <table width="100%" border="0" cellspacing="0" cellpadding="0">
                     <tr>
                       <td width="15%">&nbsp;</td>
-                      <td width="68%" align="center" valign="middle" class="link_graficogps_temp"><a href="<?php echo base_url()?>temperature/show/<?=$sVineyardName;?>/<?=$value['pcb_id']?>">Gráfico/GPS</a></td>
+                      <td width="68%" align="center" valign="middle" class="link_graficogps_temp"><a href="<?php echo base_url()?>temperature/show/<?=$sVineyardName;?>/<?=$value['pcb_id']?>/3">Gráfico/GPS</a></td>
                       <td width="17%" class="link_graficogps_temp">&nbsp;</td>
                     </tr>
                   </table>
@@ -185,7 +185,7 @@ $aKey = array_keys($aMoisture);
                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
                   <tr>
                     <td width="15%">&nbsp;</td>
-                    <td width="68%" align="center" valign="middle" class="link_graficogps_temp"><a href="<?php echo base_url()?>wind_gauge/show/<?=$sVineyardName;?>/<?=$value['pcb_id']?>">Gráfico/GPS</a></td>
+                    <td width="68%" align="center" valign="middle" class="link_graficogps_temp"><a href="<?php echo base_url()?>wind_gauge/show/<?=$sVineyardName;?>/<?=$value['pcb_id']?>/3">Gráfico/GPS</a></td>
                     <td width="17%" class="link_graficogps_temp">&nbsp;</td>
                   </tr>
                 </table>
@@ -196,14 +196,14 @@ $aKey = array_keys($aMoisture);
            }else{ ?>
             <!--inicio modulo vel. viento sensor b-->     
             <div class="modulos_chicos_b">
-              <div class="titulos_mod_chicos">Vel. Viento B</div>
-              <!-- <div class="titulos_mod_chicos">Vel. Viento <?=$aKey[1]?></div> -->
+              <!-- <div class="titulos_mod_chicos">Vel. Viento B</div> -->
+              <div class="titulos_mod_chicos">Vel. Viento <?=$aKey[1]?></div>
               <div class="info_mod_chicos_viento" id="<?=$value['sensor_type'].$value['sensor_id']?>"><?=$value['value']?>km/h <?=$value['direction']?></div>
               <div class="link_mod_chicos">
                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
                   <tr>
                     <td width="15%">&nbsp;</td>
-                    <td width="68%" align="center" valign="middle" class="link_graficogps_temp"><a href="<?php echo base_url()?>wind_gauge/show/<?=$sVineyardName;?>/<?=$value['pcb_id']?>">Gráfico/GPS</a></td>
+                    <td width="68%" align="center" valign="middle" class="link_graficogps_temp"><a href="<?php echo base_url()?>wind_gauge/show/<?=$sVineyardName;?>/<?=$value['pcb_id']?>/3">Gráfico/GPS</a></td>
                     <td width="17%" class="link_graficogps_temp">&nbsp;</td>
                   </tr>
                 </table>
@@ -230,7 +230,7 @@ $aKey = array_keys($aMoisture);
                   <table width="100%" border="0" cellspacing="0" cellpadding="0">
                     <tr>
                       <td width="15%">&nbsp;</td>
-                      <td width="68%" align="center" valign="middle" class="link_graficogps_temp"><a href="<?php echo base_url()?>rain_gauge/show/<?=$sVineyardName;?>/<?=$value['pcb_id']?>">Gráfico/GPS</a></td>
+                      <td width="68%" align="center" valign="middle" class="link_graficogps_temp"><a href="<?php echo base_url()?>rain_gauge/show/<?=$sVineyardName;?>/<?=$value['pcb_id']?>/3">Gráfico/GPS</a></td>
                       <td width="17%" class="link_graficogps_temp">&nbsp;</td>
                     </tr>
                   </table>
@@ -241,14 +241,14 @@ $aKey = array_keys($aMoisture);
            }else{ ?>    
           <!--inicio modulo Precipitación sensor b-->       
                 <div class="modulos_chicos_b">
-                  <div class="titulos_mod_chicos">Precipitaciones B</div>
-                  <!-- <div class="titulos_mod_chicos">Precipitaciones <?=$aKey[1]?></div> -->
+                  <!-- <div class="titulos_mod_chicos">Precipitaciones B</div> -->
+                  <div class="titulos_mod_chicos">Precipitaciones <?=$aKey[1]?></div>
                   <div class="info_mod_chicos_prec" id="<?=$value['sensor_type'].$value['sensor_id']?>"><?=$value['value']?> mm</div>
                   <div class="link_mod_chicos">
                     <table width="100%" border="0" cellspacing="0" cellpadding="0">
                       <tr>
                         <td width="15%">&nbsp;</td>
-                        <td width="68%" align="center" valign="middle" class="link_graficogps_temp"><a href="<?php echo base_url()?>rain_gauge/show/<?=$sVineyardName;?>/<?=$value['pcb_id']?>">Gráfico/GPS</a></td>
+                        <td width="68%" align="center" valign="middle" class="link_graficogps_temp"><a href="<?php echo base_url()?>rain_gauge/show/<?=$sVineyardName;?>/<?=$value['pcb_id']?>/3">Gráfico/GPS</a></td>
                         <td width="17%" class="link_graficogps_temp">&nbsp;</td>
                       </tr>
                     </table>

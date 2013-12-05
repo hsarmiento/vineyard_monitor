@@ -52,4 +52,10 @@ class Pcb_model extends CI_Model {
         }
     }
 
+    public function get_pcb_with_id($pcb_id){
+        $this->db->select('*')
+        ->from('pcbs')
+        ->where('id', $pcb_id);
+        return $this->db->get()->row_array();
+    }
 }
