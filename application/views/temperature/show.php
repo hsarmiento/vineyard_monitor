@@ -27,7 +27,7 @@ if($days == 1){
 		<div id="central_grafico">
 
 			<!--inicio titulo -->     
-			<div id="titulo_grafico"> Temperatura | Gráfico</div>
+			<div id="titulo_grafico"> Temperatura | Gráfico </div>
 			<!--fin titulo -->  
 
 			<!--inicio grafico -->        
