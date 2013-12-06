@@ -85,7 +85,7 @@ if($days == 1){
 		var mapOptions = {
 	    	zoom: 14,		    
 		    center: last_position,
-		    mapTypeId: google.maps.MapTypeId.ROADMAP
+		    mapTypeId: google.maps.MapTypeId.SATELLITE
 	  	};
 
 		map = new google.maps.Map(document.getElementById("embedl_gps"), mapOptions);
@@ -97,16 +97,16 @@ if($days == 1){
 			position: last_position
   		});
     
-    	circle = new google.maps.Circle({
-			strokeColor: '#FF0000',
-		    strokeOpacity: 0.8,
-			strokeWeight: 2,
-			fillColor: '#FF0000',
-			fillOpacity: 0.35,
-			map: map,
-			center: last_position,
-			radius: 500
-    	});
+   //  	circle = new google.maps.Circle({
+			// strokeColor: '#FF0000',
+		 //    strokeOpacity: 0.8,
+			// strokeWeight: 2,
+			// fillColor: '#FF0000',
+			// fillOpacity: 0.35,
+			// map: map,
+			// center: last_position,
+			// radius: 500
+   //  	});
 	}
 
 	function loadScript() {
