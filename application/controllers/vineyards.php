@@ -39,17 +39,16 @@ class Vineyards extends CI_Controller
 			$aSensors = $this->sensor_model->get_sensors_with_pcb($pcb['id']);
 			foreach ($aSensors as $sensor) {
 			 	if($sensor['type'] == 'AM'){
-
 			 		$aAmbient = $this->ambient_moisture_model->get_last_ambient($sensor['id']);
 			 		$aAmbient['identifier'] = $sensor['identifier'];
 			 		$aAmbient['sensor_type'] = $sensor['type'];
-			 		$aMoisture[$pcb['identifier']][$sensor['type']] =  $aAmbient;
+			 		$aMoisture[$pcb['alias']][$sensor['type']] =  $aAmbient;
 			 	}
 			 	elseif($sensor['type'] == 'LM') {
 			 		$aLeaves = $this->leaves_moisture_model->get_last_leaves($sensor['id']);
 			 		$aLeaves['identifier'] = $sensor['identifier'];
 			 		$aLeaves['sensor_type'] = $sensor['type'];
-			 		$aMoisture[$pcb['identifier']][$sensor['type']] =  $aLeaves;
+			 		$aMoisture[$pcb['alias']][$sensor['type']] =  $aLeaves;
 			 	}
 			 	elseif($sensor['type'] == 'RG') {
 			 		$aRain = $this->rain_gauge_model->get_last_rain($sensor['id']);
@@ -61,13 +60,13 @@ class Vineyards extends CI_Controller
 			 		$aSM001 = $this->subsoil_moisture_001_model->get_last_subsoil($sensor['id']);
 			 		$aSM001['identifier'] = $sensor['identifier'];
 			 		$aSM001['sensor_type'] = $sensor['type'];
-			 		$aMoisture[$pcb['identifier']][$sensor['type']] =  $aSM001;
+			 		$aMoisture[$pcb['alias']][$sensor['type']] =  $aSM001;
 			 	}
 			 	elseif($sensor['type'] == 'SM05') {
 			 		$aSM05 = $this->subsoil_moisture_05_model->get_last_subsoil($sensor['id']);
 			 		$aSM05['identifier'] = $sensor['identifier'];
 			 		$aSM05['sensor_type'] = $sensor['type'];
-			 		$aMoisture[$pcb['identifier']][$sensor['type']] =  $aSM05;
+			 		$aMoisture[$pcb['alias']][$sensor['type']] =  $aSM05;
 			 	}
 			 	elseif($sensor['type'] == 'WG') {
 			 		$aWind = $this->wind_gauge_model->get_last_wind($sensor['id']);
@@ -116,14 +115,14 @@ class Vineyards extends CI_Controller
 			 		$aAmbient = $this->ambient_moisture_model->get_last_ambient($sensor['id']);
 			 		$aAmbient['identifier'] = $sensor['identifier'];
 			 		$aAmbient['sensor_type'] = $sensor['type'];
-			 		$aMoisture[$pcb['identifier']][$sensor['type']] =  $aAmbient;
+			 		$aMoisture[$pcb['alias']][$sensor['type']] =  $aAmbient;
 			 	}
 			 	elseif($sensor['type'] == 'LM') {
 			 		$aLeaves = $this->leaves_moisture_model->get_last_leaves($sensor['id']);
 			 		$aLeaves['identifier'] = $sensor['identifier'];
 			 		$aLeaves['sensor_type'] = $sensor['type'];
 			 		$aLeaves['pcb_id'] = $pcb['id'];
-			 		$aMoisture[$pcb['identifier']][$sensor['type']] =  $aLeaves;
+			 		$aMoisture[$pcb['alias']][$sensor['type']] =  $aLeaves;
 			 	}
 			 	elseif($sensor['type'] == 'RG') {
 			 		$aRain = $this->rain_gauge_model->get_last_rain($sensor['id']);
@@ -135,13 +134,13 @@ class Vineyards extends CI_Controller
 			 		$aSM001 = $this->subsoil_moisture_001_model->get_last_subsoil($sensor['id']);
 			 		$aSM001['identifier'] = $sensor['identifier'];
 			 		$aSM001['sensor_type'] = $sensor['type'];
-			 		$aMoisture[$pcb['identifier']][$sensor['type']] =  $aSM001;
+			 		$aMoisture[$pcb['alias']][$sensor['type']] =  $aSM001;
 			 	}
 			 	elseif($sensor['type'] == 'SM05') {
 			 		$aSM05 = $this->subsoil_moisture_05_model->get_last_subsoil($sensor['id']);
 			 		$aSM05['identifier'] = $sensor['identifier'];
 			 		$aSM05['sensor_type'] = $sensor['type'];
-			 		$aMoisture[$pcb['identifier']][$sensor['type']] =  $aSM05;
+			 		$aMoisture[$pcb['alias']][$sensor['type']] =  $aSM05;
 			 	}
 			 	elseif($sensor['type'] == 'WG') {
 			 		$aWind = $this->wind_gauge_model->get_last_wind($sensor['id']);
@@ -192,7 +191,7 @@ class Vineyards extends CI_Controller
 		{
 			$aAux = array();
 			$aAux['pcb_id'] = $pcb['id'];
-			$aAux['pcb_identifier'] = $pcb['identifier'];
+			$aAux['pcb_identifier'] = $pcb['alias'];
 			$aSensors = $this->sensor_model->get_sensors_with_pcb($pcb['id']);			
 			foreach ($aSensors as $sensor)
 			{
